@@ -314,10 +314,13 @@ header nav .brand-span {
     font-size: 1.45rem;
 }
 
+/* 这个进行了修改 */
 header .brand-logo .logo-img {
-    height: 45px;
+    height: 60px;
     vertical-align: middle;
     padding-bottom: 6px;
+    width: 60px;
+    top: -5px;
 }
 
 header .brand-logo .logo-span {
