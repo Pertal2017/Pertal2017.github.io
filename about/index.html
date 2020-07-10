@@ -322,7 +322,7 @@
         <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
-            <div class="title center-align">
+            <div class="title center-align diyFont">
                 
                 Endeavor
                 
@@ -330,7 +330,7 @@
 
             <div class="description center-align">
                 
-                <span id="subtitle"></span>
+                <span id="subtitle" class="diyFont"></span>
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
 
                 <script>
@@ -342,7 +342,7 @@
                         if (xhr.readyState === 4) {
                             var data = JSON.parse(xhr.responseText);
                             // 处理示例
-                            var todaypoem =  data.data.content + "&nbsp;&nbsp;---&nbsp;&nbsp;来自今日诗词";
+                            var todaypoem =  data.data.content;
                         }
                         // 从这开始为原来的文件
                         var typed = new Typed("#subtitle", {
@@ -600,7 +600,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"随笔","value":1},{"name":"教程","value":1}],
+                data: [{"name":"教程","value":1},{"name":"随笔","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -624,7 +624,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["记录感悟","Github","Hexo"]
+                data: ["Github","Hexo","记录感悟"]
             }
         ],
         yAxis: [
@@ -896,7 +896,17 @@ $(function () {
 </script>
 
     
-    <script src="/libs/others/clicklove.js" async="async"></script>
+    <!-- 动态标签栏设置 -->
+    
+    <script src="/libs/others/funnytitle.js" async="async"></script>
+    
+    <!-- 文字点击特效 -->
+    
+        <script src="/libs/others/clicktext.js" async="async"></script>
+    
+     <!-- 掉落星星特效 -->
+     
+        <script src="/libs/others/cursor.js" async="async"></script>
     
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
@@ -911,7 +921,8 @@ $(function () {
     
     
     <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js"
+        async="async"></script>
     
 
     
@@ -922,11 +933,7 @@ $(function () {
 
 </body>
 
-<!-- 动态标签栏设置 -->
-<script type="text/javascript"> 
-var OriginTitile = document.title, st; 
-document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) 
-</script>
+
 
 
 </html>

@@ -1,6 +1,17 @@
 /* Here is your custom css styles. */
 
 /* hexo-filter-github-emojis */
+
+/* 字体添加 */
+@font-face{
+    font-family: 'myFont';
+    src: url('../font/myFont.ttf');
+}
+
+.diyFont {
+    font-family: 'myFont';
+}
+
 .github-emoji{
     height: 2em;
     width: 2em;

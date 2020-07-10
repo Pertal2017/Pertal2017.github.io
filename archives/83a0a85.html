@@ -401,7 +401,7 @@
     }
 
     #toc-content .toc-link:hover {
-        color: #42b983;
+        color: #86A8E7;
         font-weight: 700;
         text-decoration: underline;
     }
@@ -416,7 +416,7 @@
     }
 
     #toc-content .is-active-link {
-        color: #42b983;
+        color: #86A8E7;
     }
 
     #floating-toc-btn {
@@ -1325,7 +1325,17 @@ $(function () {
 </script>
 
     
-    <script src="/libs/others/clicklove.js" async="async"></script>
+    <!-- 动态标签栏设置 -->
+    
+    <script src="/libs/others/funnytitle.js" async="async"></script>
+    
+    <!-- 文字点击特效 -->
+    
+        <script src="/libs/others/clicktext.js" async="async"></script>
+    
+     <!-- 掉落星星特效 -->
+     
+        <script src="/libs/others/cursor.js" async="async"></script>
     
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
@@ -1340,7 +1350,8 @@ $(function () {
     
     
     <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js"
+        async="async"></script>
     
 
     
@@ -1351,11 +1362,7 @@ $(function () {
 
 </body>
 
-<!-- 动态标签栏设置 -->
-<script type="text/javascript"> 
-var OriginTitile = document.title, st; 
-document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) 
-</script>
+
 
 
 </html>

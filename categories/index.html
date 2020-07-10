@@ -315,7 +315,7 @@
         <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
-            <div class="title center-align">
+            <div class="title center-align diyFont">
                 
                 Endeavor
                 
@@ -323,7 +323,7 @@
 
             <div class="description center-align">
                 
-                <span id="subtitle"></span>
+                <span id="subtitle" class="diyFont"></span>
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
 
                 <script>
@@ -335,7 +335,7 @@
                         if (xhr.readyState === 4) {
                             var data = JSON.parse(xhr.responseText);
                             // 处理示例
-                            var todaypoem =  data.data.content + "&nbsp;&nbsp;---&nbsp;&nbsp;来自今日诗词";
+                            var todaypoem =  data.data.content;
                         }
                         // 从这开始为原来的文件
                         var typed = new Typed("#subtitle", {
@@ -384,19 +384,19 @@
                 
                 
                 
-                <a href="/categories/%E9%9A%8F%E7%AC%94/" title="随笔: 1">
+                <a href="/categories/%E6%95%99%E7%A8%8B/" title="教程: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">随笔
+                            style="background-color: #F9EBEA;">教程
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/%E6%95%99%E7%A8%8B/" title="教程: 1">
+                <a href="/categories/%E9%9A%8F%E7%AC%94/" title="随笔: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">教程
+                            style="background-color: #F5EEF8;">随笔
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -444,7 +444,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"随笔","max":2},{"name":"教程","max":2}],
+            indicator: [{"name":"教程","max":2},{"name":"随笔","max":2}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -645,7 +645,17 @@ $(function () {
 </script>
 
     
-    <script src="/libs/others/clicklove.js" async="async"></script>
+    <!-- 动态标签栏设置 -->
+    
+    <script src="/libs/others/funnytitle.js" async="async"></script>
+    
+    <!-- 文字点击特效 -->
+    
+        <script src="/libs/others/clicktext.js" async="async"></script>
+    
+     <!-- 掉落星星特效 -->
+     
+        <script src="/libs/others/cursor.js" async="async"></script>
     
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
@@ -660,7 +670,8 @@ $(function () {
     
     
     <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js"
+        async="async"></script>
     
 
     
@@ -671,11 +682,7 @@ $(function () {
 
 </body>
 
-<!-- 动态标签栏设置 -->
-<script type="text/javascript"> 
-var OriginTitile = document.title, st; 
-document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) 
-</script>
+
 
 
 </html>

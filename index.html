@@ -362,7 +362,7 @@
             <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
-            <div class="title center-align">
+            <div class="title center-align diyFont">
                 
                 Endeavor
                 
@@ -370,7 +370,7 @@
 
             <div class="description center-align">
                 
-                <span id="subtitle"></span>
+                <span id="subtitle" class="diyFont"></span>
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
 
                 <script>
@@ -382,7 +382,7 @@
                         if (xhr.readyState === 4) {
                             var data = JSON.parse(xhr.responseText);
                             // 处理示例
-                            var todaypoem =  data.data.content + "&nbsp;&nbsp;---&nbsp;&nbsp;来自今日诗词";
+                            var todaypoem =  data.data.content;
                         }
                         // 从这开始为原来的文件
                         var typed = new Typed("#subtitle", {
@@ -530,8 +530,8 @@
                     
                         <div class="dream">
     
-    <div class="title center-align">
-        <i class="far fa-star"></i>&nbsp;&nbsp;<span id="hitokoto">一言API请求超时。请稍后重试。</span> --- 来自一言
+    <div class="title center-align diyFont" style="font-size: 2.5rem;">
+        <i class="far fa-star"></i>&nbsp;&nbsp;<span id="hitokoto">一言API请求超时。请稍后重试。</span> 
         <!-- 原来标题的部分 现在设置使用一言 -->
         <!--  -->
     </div>
@@ -565,32 +565,6 @@
     
     
     <div class="col s12 m6" >
-        <div class="post-card" style="background-image: url('/medias/featureimages/8.jpg')">
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                        
-                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="category">随笔</a>
-                        
-                    
-                </div>
-                <a href="/archives/83a0a85.html">
-                    <h3 class="post-title">生命不息,折腾不止.---记我自己的路</h3>
-                </a>
-                <p class="post-description">
-                    
-                        以后的人生谁也无法决定，以后的自己谁也无法诉说，一切都要靠自己脚踏实地。
-                    
-                </p>
-                <a href="/archives/83a0a85.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
-                    <i class="icon far fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" >
         <div class="post-card" style="background-image: url('/medias/featureimages/27.jpg')">
             <div class="post-body">
                 <div class="post-categories">
@@ -608,7 +582,33 @@
                         Github+Hexo搭建教程，是自己搭建时的一些总结，希望对大家有用。
                     
                 </p>
-                <a href="/archives/19f3ab51.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)" target="_blank">
+                <a href="/archives/19f3ab51.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" >
+        <div class="post-card" style="background-image: url('/medias/featureimages/8.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="category">随笔</a>
+                        
+                    
+                </div>
+                <a href="/archives/83a0a85.html">
+                    <h3 class="post-title">生命不息,折腾不止.---记我自己的路</h3>
+                </a>
+                <p class="post-description">
+                    
+                        以后的人生谁也无法决定，以后的自己谁也无法诉说，一切都要靠自己脚踏实地。
+                    
+                </p>
+                <a href="/archives/83a0a85.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)" target="_blank">
                     <i class="icon far fa-eye fa-fw"></i>阅读更多
                 </a>
             </div>
@@ -914,7 +914,17 @@ $(function () {
 </script>
 
     
-    <script src="/libs/others/clicklove.js" async="async"></script>
+    <!-- 动态标签栏设置 -->
+    
+    <script src="/libs/others/funnytitle.js" async="async"></script>
+    
+    <!-- 文字点击特效 -->
+    
+        <script src="/libs/others/clicktext.js" async="async"></script>
+    
+     <!-- 掉落星星特效 -->
+     
+        <script src="/libs/others/cursor.js" async="async"></script>
     
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
@@ -929,7 +939,8 @@ $(function () {
     
     
     <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js"
+        async="async"></script>
     
 
     
@@ -940,11 +951,7 @@ $(function () {
 
 </body>
 
-<!-- 动态标签栏设置 -->
-<script type="text/javascript"> 
-var OriginTitile = document.title, st; 
-document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) 
-</script>
+
 
 
 </html>
