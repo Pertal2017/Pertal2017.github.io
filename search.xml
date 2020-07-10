@@ -4,19 +4,27 @@
   
     
     <entry>
-      <title>Github+Hexo博客搭建教程</title>
-      <link href="/archives/ed7f9e7.html"/>
-      <url>/archives/ed7f9e7.html</url>
+      <title>Github+Hexo搭建博客教程</title>
+      <link href="/archives/19f3ab51.html"/>
+      <url>/archives/19f3ab51.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>因为毕业了，所以为了以后能够有一个记录的博客，所以花费了一段时间，搭建了一个利用GitHub+Hexo实现的个人博客<del>(最大的原因是因为可以白嫖)</del> ，但是之前使用的博客没有用过Markdown进行相关的内容写作，因此教程可能有些地方并不美观，还请各位小伙伴能够见谅，有问题也可以在下方留言，有时间我会回答的。</p><p>首先我们要了解一下我们搭建博客需要使用的框架Hexo，这个框架是一个高效的静态站点生成框架，基于Node.js。通过这个框架我们可以利用MarkDown语法来撰写自己的博客内容，并且写文章，除了没有可视化管理界面以外一切都很方便(这个问题可以用插件解决)，废话少说下面介绍。</p><h1 id="准备与安装"><a href="#准备与安装" class="headerlink" title="准备与安装"></a>准备与安装</h1><p>在这搭建自己的博客之前我们需要完成三个主要的步骤，首先要拥有你自己的<strong>Github账号</strong>其次要在你的系统中安装好<strong>Git</strong>以及<strong>Node.js</strong>。</p><h2 id="Github的注册"><a href="#Github的注册" class="headerlink" title="Github的注册"></a>Github的注册</h2><p><a href="https://www.github.com" target="_blank" rel="noopener">Github</a> 的注册网上有很多的教程，由于我自己已经有了一个Github账号，因此这里给出网上比较新的注册教程，虽然GIthub网站是英文的网站，但是一般的浏览器都自带翻译功能，相信这个难不倒各位————<a href="https://blog.csdn.net/JCtry/article/details/107191143" target="_blank" rel="noopener">Gihub注册教程</a></p><h2 id="Git的安装"><a href="#Git的安装" class="headerlink" title="Git的安装"></a>Git的安装</h2><p>因为我们需要把自己本地仓库的内容上传到Github上面去，所以我们可能需要用到版本控制工具<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>，由于这个工具并不是GUI工具所以可能需要学习一些命令，本文需要用到的命令下面都会标出，这里同样给出一个<a href="https://blog.csdn.net/aiwst/article/details/106924863" target="_blank" rel="noopener">Git的安装教程</a>照着安装即可。</p><p><strong>Note：</strong></p><p>​    这里提示一下，添加路径的时候要选择 <code>Use Git from the Windows Command Prompt</code>,这样做的好处可以让我们在Windows的控制台打开Git。安装完成之后Windows系统下按住<code>Win+R</code>输入<code>cmd</code>打开控制台输入<code>git --version</code>验证是否安装成功，效果如下图：</p><img src="https://s1.ax1x.com/2020/07/10/UuXJvq.png" alt="UuXJvq.png" style="zoom:85%;" /><h2 id="Node-js的安装"><a href="#Node-js的安装" class="headerlink" title="Node.js的安装"></a>Node.js的安装</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>安装就比较简单了直接点击<a href="https://nodejs.org/dist/v12.18.2/node-v12.18.2-x64.msi" target="_blank" rel="noopener">下载</a>其实就可以了，我这里给出的是长期支持的x64版本如果需要其他版本可以上官网查看，安装只需要一路Next即可。</p><p>安装完成之后Windows系统下按住<code>Win+R</code>输入<code>cmd</code>打开控制台,输入 <code>node -v</code> 和 <code>npm - v</code> ,如果出现版本号，就安装成功了，如下图：</p><p><img src="https://s1.ax1x.com/2020/07/10/UuXfaD.png" alt="UuXfaD.png"></p><p>当上面的步骤完成之后，我们就可以开始利用我们的Github搭建我们自己的免费博客了！</p><h1 id="GithubPage设置"><a href="#GithubPage设置" class="headerlink" title="GithubPage设置"></a>GithubPage设置</h1><h2 id="GithubPage仓库创建"><a href="#GithubPage仓库创建" class="headerlink" title="GithubPage仓库创建"></a>GithubPage仓库创建</h2><p>GithubPage是Github提供的一个搭建博客的功能，利用这个我们可以免费搭建属于自己的个人博客，打开<a href="https://github.com" target="_blank" rel="noopener">https://github.com</a> ,新建一个项目，如图所示：</p><p><img src="https://s1.ax1x.com/2020/07/10/UujmW9.png" alt="UujmW9.png"></p><p>之后输入自己的项目名字，项目名为 <code>创建的用户名.github.io</code> 注意的是这里的 <code>.github.io</code> 不能少，同样的你的用户名必须和你的<strong>Github用户名</strong>完全一致，不能改动，例如我这里的账号叫 <code>PertalDemoTest</code> ,那么我创建的 <code>repository</code> 名称就叫 <code>PertalDemoTest.github.io</code> , 下面的 <code>Description</code> 用来填写对这个仓库的描述，其他默认即可，当然这里可以<strong>勾选</strong><code>Initialize this repository with a ReADME</code>，这样可以直接初始化，这里我就不勾选了。</p><p><img src="https://s1.ax1x.com/2020/07/10/UKSBcj.png" alt="UKSBcj.png"></p><p>创建完成之后，出现的界面如下所示:</p><img src="https://s1.ax1x.com/2020/07/10/UKSqUK.png" alt="UKSqUK.png" style="zoom:50%;" /><p>到这里基本的仓库创建就完成了。</p><h2 id="如何利用Git进行初始化"><a href="#如何利用Git进行初始化" class="headerlink" title="如何利用Git进行初始化"></a>如何利用Git进行初始化</h2><p>完成了仓库的创建之后，我们需要对我们自己新建的这个仓库进行一个初始化，这里首先在本地新建一个文件夹用来保存后续上传到仓库的配置，对文件夹<strong>鼠标右键</strong>后选择<strong>Git Bash Here</strong>弹出Git的界面后，我们首先进行c初始化输入 <code>git init</code> 之后一下设置用户名和邮箱的设置，这里分别输入 <code>git config user.name &quot;你的Github用户名&quot;</code> 和 <code>git config user.email &quot;你创建的Github账户邮箱&quot;</code> 当然 如果你只有一个账户的话可以直接设置 <code>git config --global user.name &quot;你的Github用户名&quot;</code>和 <code>git config --global user.email &quot;你创建的Github账户邮箱&quot;</code> 设置完成。</p><p><img src="https://s1.ax1x.com/2020/07/10/UKPWZR.png" alt="UKPWZR.png"></p><p>这里我们使用<strong>SSH</strong>的登入方式，因为这种登录方式比较简单，直接输入 <code>ssh-keygen -t rsa -C &quot;你的电子邮箱&quot;</code>即可，然后一路回车，如果碰到有<strong>(y/n)</strong>打一个<strong>y</strong>继续回车，这样我们就生成了自己的SSH密钥。</p><p><img src="https://s1.ax1x.com/2020/07/10/UKimWT.png" alt="UKimWT.png"></p><p>然后打开你的Github找到<strong>Settings</strong>，找到<strong>SSH and GPG keys</strong>点击<strong>New SSH key</strong>之后到你的 <code>C:/用户/你的用户名/.ssh</code>下找到<code>id_rsa.pub</code>文件利用<strong>记事本</strong>打开复制里面的内容，放入刚刚的页面中，这里的<strong>Title</strong>可以随意，如下图所示：</p><p><img src="https://s1.ax1x.com/2020/07/10/UKkSKg.png" alt="UKkSKg.png"></p><p><img src="https://s1.ax1x.com/2020/07/10/UKATAA.png" alt="UKATAA.png"></p><p>同时这里设置一下，可能需要输入一下自己的密码，验证一下，之后我们在控制台中输入 <code>ssh -T git@github.com</code> 出现下图提示就成功了。</p><p><img src="https://s1.ax1x.com/2020/07/10/UKZxBD.png" alt="UKZxBD.png"></p><p>需要注意的是后面提示没有提供<strong>shell access</strong>这里我们需要在个人账户的设置中找到<strong>Email</strong>设置下将<strong>Keep my email address private</strong>的勾选取消，然后在<strong>Profile</strong>设置中找到<strong>Public email</strong>选择自己的邮箱拉到下面点击<strong>Update profile</strong>解决后面<strong>无法push</strong>的问题。</p><p>接下来我们可以参照<strong>Github的提示</strong>测试一下连接我们的远程仓库</p><p><img src="https://s1.ax1x.com/2020/07/10/UKmjTe.png" alt="UKmjTe.png"></p><p><a href="https://imgchr.com/i/UKnmfs" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/07/10/UKnmfs.png" alt="UKnmfs.png"></a></p><p>之后刷新一下我们的仓库，可以看到一个<code>README.md</code>文件，到这里我们已经完成了本地与远程仓库的连接。</p><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>接下来，刷新一下我们的仓库页面，找到<strong>Settings</strong>下拉找到<strong>GitHub Pages</strong>点击<strong>Choose a theme</strong>选择一个喜欢的主题，选择<strong>Select theme</strong>然后在网址框中输入<code>你的用户名.github.io</code>可以发现已经有一个页面的雏形了。</p><p><img src="https://s1.ax1x.com/2020/07/10/UKuZDK.png" alt="UKuZDK.png"></p><p>接下来我们就开始安装Hexo,在Git控制台中输入 <code>npm i hexo-cli -g</code> ，可能会有<strong>WARN</strong>这里可以直接无视，接下来输入 <code>hexo init</code> 进行初始化，然后输入 <code>npm install</code> 安装必备组件，这里可能有报错，我们可以将隐藏的 <code>.git</code>先移到别处删除我们刚刚创建的<code>REAMD.md</code>文件,等待安装结束后在移回来，接下来我们输入 <code>hexo g</code> 和 <code>hexo s</code> 然后浏览器输入<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> , 就可以看到我们的博客啦，效果如下：</p><p><img src="https://s1.ax1x.com/2020/07/10/UK1iXn.png" alt="UK1iXn.png"></p><p>到这里整个博客就算搭建完成了，接下来我们就可以写我们自己的文章了。</p><h1 id="写文章，发布文章"><a href="#写文章，发布文章" class="headerlink" title="写文章，发布文章"></a>写文章，发布文章</h1><p>首先安装一个扩展 <code>npm i hexo-deployer-git</code> 然后输入 <code>hexo new &quot;文章名&quot;</code>就可以创建一篇文章啦，之后打开 <code>根目录/source/_posts</code>里面就可以发现创建好的文章，这里编写文章可能需要学习一下MarkDown，并且下载一个支持<code>.md</code>文件的程序，这里我用的是<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora</a>,当然市面还有其他各类的软件，这里就看个人喜好进行选择了，编写完成后 打开<strong>根目录</strong>下的 <code>_config.yml</code> 文件修改<strong>deploy</strong>后保存。</p><pre><code>deploy:  type: git  repository: https://github.com/你的github用户名/你的github用户.github.io  branch: master</code></pre><p> <code>hexo g</code> 生成文件然后<code>hexo d</code>就可以将自己的文章发布到网站上了，输入 <code>用户名.github.io</code> 就可以访问自己刚刚生成的文章了，到这里基本的博客就搭建完成了。</p><h1 id="个性化设置"><a href="#个性化设置" class="headerlink" title="个性化设置"></a>个性化设置</h1><p>这里埋一个坑，内容很多，慢慢填坑…</p>]]></content>
       
       
       <categories>
           
-          <category> uncategorized </category>
+          <category> 教程 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> Github </tag>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
       
     </entry>
     
@@ -32,7 +40,7 @@
       
       <categories>
           
-          <category> uncategorized </category>
+          <category> 随笔 </category>
           
       </categories>
       
