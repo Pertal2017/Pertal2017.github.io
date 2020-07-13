@@ -521,8 +521,7 @@
 <h2 id="Git的安装"><a href="#Git的安装" class="headerlink" title="Git的安装"></a>Git的安装</h2><p>因为我们需要把自己本地仓库的内容上传到Github上面去，所以我们可能需要用到版本控制工具<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>，由于这个工具并不是GUI工具所以可能需要学习一些命令，本文需要用到的命令下面都会标出，这里同样给出一个<a href="https://blog.csdn.net/aiwst/article/details/106924863" target="_blank" rel="noopener">Git的安装教程</a>照着安装即可。</p>
 <p><strong>Note：</strong></p>
 <p>​    这里提示一下，添加路径的时候要选择 <code>Use Git from the Windows Command Prompt</code>,这样做的好处可以让我们在Windows的控制台打开Git。安装完成之后Windows系统下按住<code>Win+R</code>输入<code>cmd</code>打开控制台输入<code>git --version</code>验证是否安装成功，效果如下图：</p>
-<img src="https://s1.ax1x.com/2020/07/10/UuXJvq.png" alt="UuXJvq.png" style="zoom:85%;" />
-
+<p><img src="https://s1.ax1x.com/2020/07/10/UuXJvq.png" alt="UuXJvq.png" style="zoom:85%;" /></p>
 <h2 id="Node-js的安装"><a href="#Node-js的安装" class="headerlink" title="Node.js的安装"></a>Node.js的安装</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>安装就比较简单了直接点击<a href="https://nodejs.org/dist/v12.18.2/node-v12.18.2-x64.msi" target="_blank" rel="noopener">下载</a>其实就可以了，我这里给出的是长期支持的x64版本如果需要其他版本可以上官网查看，安装只需要一路Next即可。</p>
 <p>安装完成之后Windows系统下按住<code>Win+R</code>输入<code>cmd</code>打开控制台,输入 <code>node -v</code> 和 <code>npm - v</code> ,如果出现版本号，就安装成功了，如下图：</p>
 <p><img src="https://s1.ax1x.com/2020/07/10/UuXfaD.png" alt="UuXfaD.png"></p>
@@ -532,8 +531,7 @@
 <p>之后输入自己的项目名字，项目名为 <code>创建的用户名.github.io</code> 注意的是这里的 <code>.github.io</code> 不能少，同样的你的用户名必须和你的<strong>Github用户名</strong>完全一致，不能改动，例如我这里的账号叫 <code>PertalDemoTest</code> ,那么我创建的 <code>repository</code> 名称就叫 <code>PertalDemoTest.github.io</code> , 下面的 <code>Description</code> 用来填写对这个仓库的描述，其他默认即可，当然这里可以<strong>勾选</strong><code>Initialize this repository with a ReADME</code>，这样可以直接初始化，这里我就不勾选了。</p>
 <p><img src="https://s1.ax1x.com/2020/07/10/UKSBcj.png" alt="UKSBcj.png"></p>
 <p>创建完成之后，出现的界面如下所示:</p>
-<img src="https://s1.ax1x.com/2020/07/10/UKSqUK.png" alt="UKSqUK.png" style="zoom:50%;" />
-
+<p><img src="https://s1.ax1x.com/2020/07/10/UKSqUK.png" alt="UKSqUK.png" style="zoom:50%;" /></p>
 <p>到这里基本的仓库创建就完成了。</p>
 <h2 id="如何利用Git进行初始化"><a href="#如何利用Git进行初始化" class="headerlink" title="如何利用Git进行初始化"></a>如何利用Git进行初始化</h2><p>完成了仓库的创建之后，我们需要对我们自己新建的这个仓库进行一个初始化，这里首先在本地新建一个文件夹用来保存后续上传到仓库的配置，对文件夹<strong>鼠标右键</strong>后选择<strong>Git Bash Here</strong>弹出Git的界面后，我们首先进行c初始化输入 <code>git init</code> 之后一下设置用户名和邮箱的设置，这里分别输入 <code>git config user.name &quot;你的Github用户名&quot;</code> 和 <code>git config user.email &quot;你创建的Github账户邮箱&quot;</code> 当然 如果你只有一个账户的话可以直接设置 <code>git config --global user.name &quot;你的Github用户名&quot;</code>和 <code>git config --global user.email &quot;你创建的Github账户邮箱&quot;</code> 设置完成。</p>
 <p><img src="https://s1.ax1x.com/2020/07/10/UKPWZR.png" alt="UKPWZR.png"></p>
@@ -558,7 +556,8 @@
 <pre><code>deploy:
   type: git
   repository: https://github.com/你的github用户名/你的github用户.github.io
-  branch: master</code></pre><p> <code>hexo g</code> 生成文件然后<code>hexo d</code>就可以将自己的文章发布到网站上了，输入 <code>用户名.github.io</code> 就可以访问自己刚刚生成的文章了，到这里基本的博客就搭建完成了。</p>
+  branch: master
+</code></pre><p> <code>hexo g</code> 生成文件然后<code>hexo d</code>就可以将自己的文章发布到网站上了，输入 <code>用户名.github.io</code> 就可以访问自己刚刚生成的文章了，到这里基本的博客就搭建完成了。</p>
 <h1 id="个性化设置"><a href="#个性化设置" class="headerlink" title="个性化设置"></a>个性化设置</h1><p>这里埋一个坑，内容很多，慢慢填坑…</p>
 
             </div>
@@ -1221,7 +1220,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9.3k</span>&nbsp;字
+                class="white-color">6.3k</span>&nbsp;字
             
             
             
@@ -1389,8 +1388,6 @@ $(function () {
     
      <!-- 掉落星星特效 -->
      
-        <script src="/libs/others/cursor.js" async="async"></script>
-    
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     

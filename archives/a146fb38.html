@@ -489,21 +489,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-12
+                    2020-07-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.4k
+                    464
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    1 分
                 </div>
                 
 
@@ -526,159 +526,172 @@
 <li><strong>两者关系</strong>相辅相成，数据结构为算法<strong>服务</strong>，算法主要作用在特定的数据结构之上。</li>
 </ol>
 <h2 id="大O复杂度表示法"><a href="#大O复杂度表示法" class="headerlink" title="大O复杂度表示法"></a>大O复杂度表示法</h2><h3 id="如何理解大O复杂度表示法"><a href="#如何理解大O复杂度表示法" class="headerlink" title="如何理解大O复杂度表示法"></a>如何理解大O复杂度表示法</h3><p>第一个简单代码分析</p>
-<pre class=" language-c"><code class="language-c"> <span class="token comment" spellcheck="true">//这里假设的是每行执行时间为time</span>
- <span class="token keyword">int</span> <span class="token function">cal</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 这里为 1 * time</span>
-   <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 这里为 2 * time </span>
-   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 这里分析主要执行的操作是++i操作 要执行n次 因为 i &lt;= n</span>
-     <span class="token comment" spellcheck="true">//在这个里面的代码块执行是一个循环结构</span>
-     sum <span class="token operator">=</span> sum <span class="token operator">+</span> i<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这里执行的操作是n次</span>
-   <span class="token punctuation">}</span>
-   <span class="token comment" spellcheck="true">//循环结束之后 这里总共执行 2n * time次</span>
-   <span class="token comment" spellcheck="true">// 那么不算最后的输出 在这个内部函数逻辑里面它的总共执行次数为 (2n+2) * time</span>
-   <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
- <span class="token punctuation">}</span></code></pre>
+<pre class=" language-lang-c"><code class="language-lang-c"> //这里假设的是每行执行时间为time
+ int cal(int n) {
+   int sum = 0;  // 这里为 1 * time
+   int i = 1; // 这里为 2 * time 
+   for (; i <= n; ++i) { // 这里分析主要执行的操作是++i操作 要执行n次 因为 i <= n
+     //在这个里面的代码块执行是一个循环结构
+     sum = sum + i; //这里执行的操作是n次
+   }
+   //循环结束之后 这里总共执行 2n * time次
+   // 那么不算最后的输出 在这个内部函数逻辑里面它的总共执行次数为 (2n+2) * time
+   return sum;
+ }
+</code></pre>
 <p>这里对 <code>for(;i&lt;=n;i++)</code> 的循环块代码利用另一种<strong>循环结构</strong>的分析</p>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">while</span><span class="token punctuation">(</span>true<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//这里的if判断说明的是当i > n之后跳出这个循环</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">></span> n<span class="token punctuation">)</span>    
-        <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//这个操作其实是 i = i + 1; 那么通过上面的条件就知道这个要执行 n 次</span>
-    <span class="token keyword">else</span> 
-        <span class="token operator">++</span>i<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//这个操作是在循环块代码内部那么执行 n 次</span>
-    sum <span class="token operator">=</span> sum <span class="token operator">+</span> i<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">// 因此最后这个循环体执行n + n 次的操作 也就是 2n</span></code></pre>
+<pre class=" language-lang-c"><code class="language-lang-c">while(true){
+    //这里的if判断说明的是当i > n之后跳出这个循环
+    if(i > n)    
+        break;
+    //这个操作其实是 i = i + 1; 那么通过上面的条件就知道这个要执行 n 次
+    else 
+        ++i;
+    //这个操作是在循环块代码内部那么执行 n 次
+    sum = sum + i;
+}
+// 因此最后这个循环体执行n + n 次的操作 也就是 2n
+</code></pre>
 <p>第二个部分的代码分析</p>
-<pre class=" language-c"><code class="language-c"> <span class="token comment" spellcheck="true">//这里假设的是每行执行时间为time</span>
- <span class="token keyword">int</span> <span class="token function">cal</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这里为 1 * time</span>
-   <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这里为 2 * time</span>
-   <span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这里为 3 * time</span>
-   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">//这里分析主要执行的是++i操作 要执行n次 因为 i &lt;= n</span>
-     <span class="token comment" spellcheck="true">// 这里是循环代码的内部操作</span>
-     j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这里执行的操作是n次</span>
-     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//这里分析主要执行的是++j操作 要执行n次 但是它在循环操作里面 所以就是 n*n次</span>
-       <span class="token comment" spellcheck="true">//这里是循环代码的内部操作</span>
-       sum <span class="token operator">=</span> sum <span class="token operator">+</span>  i <span class="token operator">*</span> j<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这里执行的操作是n*n次</span>
-     <span class="token punctuation">}</span>
-     <span class="token comment" spellcheck="true">//跳出这个循环后这里总共执行n*n + n*n 也就是 2n^2</span>
-   <span class="token punctuation">}</span>
-    <span class="token comment" spellcheck="true">//跳出这个循环后 这里总共执行 2n + 2n^2</span>
-    <span class="token comment" spellcheck="true">//那么这个函数加在一起总共执行了 (2n^2 + 2n + 3) * time</span>
- <span class="token punctuation">}</span></code></pre>
+<pre class=" language-lang-c"><code class="language-lang-c"> //这里假设的是每行执行时间为time
+ int cal(int n) {
+   int sum = 0; //这里为 1 * time
+   int i = 1; //这里为 2 * time
+   int j = 1; //这里为 3 * time
+   for (; i <= n; ++i) {  //这里分析主要执行的是++i操作 要执行n次 因为 i <= n
+     // 这里是循环代码的内部操作
+     j = 1; //这里执行的操作是n次
+     for (; j <= n; ++j) { //这里分析主要执行的是++j操作 要执行n次 但是它在循环操作里面 所以就是 n*n次
+       //这里是循环代码的内部操作
+       sum = sum +  i * j; //这里执行的操作是n*n次
+     }
+     //跳出这个循环后这里总共执行n*n + n*n 也就是 2n^2
+   }
+    //跳出这个循环后 这里总共执行 2n + 2n^2
+    //那么这个函数加在一起总共执行了 (2n^2 + 2n + 3) * time
+ }
+</code></pre>
 <p>这里同样利用另一种<strong>循环结构</strong>进行分析</p>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">while</span><span class="token punctuation">(</span>true<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">></span> n<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//这里主要表示 i > n 的时候 跳出这个循环</span>
-        <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token keyword">else</span>
-        <span class="token operator">++</span>i<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 这里是说如果i &lt;=n 那么执行 i = i + 1;的操作 那么这里总共执行 n 次</span>
-    j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 这里 在循环块内部 那么执行 n次</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span>true<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">></span> n<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 这里主要表示 j > n 的时候跳出这个循环</span>
-            <span class="token keyword">break</span><span class="token punctuation">;</span>
-        <span class="token keyword">else</span>
-            <span class="token comment" spellcheck="true">// 这里是说如果 j &lt;= n 的时候执行 j = j + 1的操作 那么在这个循环体内执行 n次 </span>
-            <span class="token comment" spellcheck="true">// 但是外面还有一个循环体  所以这里这个总共执行n * n次</span>
-            <span class="token operator">++</span>j<span class="token punctuation">;</span> 
-        <span class="token comment" spellcheck="true">// 这说明 在循环体内执行n次 由于是循环体套循环体所以这里总共执行 n * n次</span>
-        sum <span class="token operator">=</span> sum <span class="token operator">+</span> i <span class="token operator">*</span> j<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">// 因此最后这个循环体总共执行的操作是 2n^2 + 2n的操作</span></code></pre>
-<p>从这两个推导我们得到一个规律<strong>所有代码的执行时间T(n)与每行代码的执行次数n成正比</strong>,那么我们可以得到一个公式也就是<br>$$<br>T(n) = O(f(n))<br>$$<br>这里$ T(n) $表示的<strong>代码总共执行时间</strong>；$ n $ 表示的是<strong>数据规模的大小</strong>；$ f(n) $表示的是<strong>每行代码执行的次数总和</strong>；公式中的$ O $用来表示<strong>代码执行时间</strong>$ T(n) $与<strong>执行次数</strong>$ f(n) $表达式成正比。</p>
+<pre class=" language-lang-c"><code class="language-lang-c">while(true){
+    if (i > n) //这里主要表示 i > n 的时候 跳出这个循环
+        break;
+    else
+        ++i; // 这里是说如果i <=n 那么执行 i = i + 1;的操作 那么这里总共执行 n 次
+    j = 1; // 这里 在循环块内部 那么执行 n次
+    while(true){
+        if (j > n) // 这里主要表示 j > n 的时候跳出这个循环
+            break;
+        else
+            // 这里是说如果 j <= n 的时候执行 j = j + 1的操作 那么在这个循环体内执行 n次 
+            // 但是外面还有一个循环体  所以这里这个总共执行n * n次
+            ++j; 
+        // 这说明 在循环体内执行n次 由于是循环体套循环体所以这里总共执行 n * n次
+        sum = sum + i * j;
+    }
+}
+// 因此最后这个循环体总共执行的操作是 2n^2 + 2n的操作
+</code></pre>
+<p>从这两个推导我们得到一个规律<strong>所有代码的执行时间T(n)与每行代码的执行次数n成正比</strong>,那么我们可以得到一个公式也就是</p>
+<script type="math/tex; mode=display">
+T(n) = O(f(n))</script><p>这里$ T(n) $表示的<strong>代码总共执行时间</strong>；$ n $ 表示的是<strong>数据规模的大小</strong>；$ f(n) $表示的是<strong>每行代码执行的次数总和</strong>；公式中的$ O $用来表示<strong>代码执行时间</strong>$ T(n) $与<strong>执行次数</strong>$ f(n) $表达式成正比。</p>
 <p><strong>注意</strong>：<strong>大O</strong>时间复杂度实际并不表示<strong>具体</strong>表示代码<strong>真正</strong>执行时间，而是表示<strong>代码执行时间</strong>随<strong>数据规模</strong>形成的一种<strong>增长变化趋势</strong>，也可以称为<strong>渐进时间复杂度</strong>，简称<strong>时间复杂度</strong>。</p>
 <h3 id="如何分析时间复杂度"><a href="#如何分析时间复杂度" class="headerlink" title="如何分析时间复杂度"></a>如何分析时间复杂度</h3><h4 id="1-只关注循环执行次数-最多-的代码"><a href="#1-只关注循环执行次数-最多-的代码" class="headerlink" title="1. 只关注循环执行次数 最多 的代码"></a>1. 只关注循环执行次数<span style='color:red'> 最多 </span>的代码</h4><p>大O表示法表示的是<strong>变化趋势</strong>，因此<strong>忽略</strong>常量，低阶，系数，<strong>只</strong>记录<strong>最大量级</strong>；也就是说一段算法中，我们<strong>关注</strong>循环执行次数<strong>最多</strong>的一段即可。</p>
-<pre class=" language-c"><code class="language-c">
- <span class="token keyword">int</span> <span class="token function">cal</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//执行一次</span>
-   <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//执行一次</span>
-   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//执行n次</span>
-     sum <span class="token operator">=</span> sum <span class="token operator">+</span> i<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//执行n次</span>
-   <span class="token punctuation">}</span>
-   <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
- <span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">//那么这关注执行次数最多的代码 这里执行最多的是n次 也就表示为 O(n)</span></code></pre>
-<h4 id="2-加法法则：总复杂度等于量级最大的那段代码的复杂度"><a href="#2-加法法则：总复杂度等于量级最大的那段代码的复杂度" class="headerlink" title="2. 加法法则：总复杂度等于量级最大的那段代码的复杂度"></a>2. 加法法则：<span style='color:red'>总复杂度</span>等于<span style='color:red'>量级最大</span>的那段代码的复杂度</h4><pre class=" language-c"><code class="language-c">
-<span class="token keyword">int</span> <span class="token function">cal</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token comment" spellcheck="true">//这里是T1</span>
-   <span class="token keyword">int</span> sum_1 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 执行1次</span>
-   <span class="token keyword">int</span> p <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 执行1次</span>
-   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> p <span class="token operator">&lt;=</span> <span class="token number">100</span><span class="token punctuation">;</span> <span class="token operator">++</span>p<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//执行 100 次</span>
-     sum_1 <span class="token operator">=</span> sum_1 <span class="token operator">+</span> p<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//执行 100 次</span>
-   <span class="token punctuation">}</span>
-   <span class="token comment" spellcheck="true">//那么这一段执行最多的表示 100次 也就是常量 常量一般直接表示O(1)即可 </span>
+<pre class=" language-lang-c"><code class="language-lang-c">
+ int cal(int n) {
+   int sum = 0; //执行一次
+   int i = 1; //执行一次
+   for (; i <= n; ++i) { //执行n次
+     sum = sum + i; //执行n次
+   }
+   return sum;
+ }
+//那么这关注执行次数最多的代码 这里执行最多的是n次 也就表示为 O(n)
+</code></pre>
+<h4 id="2-加法法则：总复杂度等于量级最大的那段代码的复杂度"><a href="#2-加法法则：总复杂度等于量级最大的那段代码的复杂度" class="headerlink" title="2. 加法法则：总复杂度等于量级最大的那段代码的复杂度"></a>2. 加法法则：<span style='color:red'>总复杂度</span>等于<span style='color:red'>量级最大</span>的那段代码的复杂度</h4><pre class=" language-lang-c"><code class="language-lang-c">
+int cal(int n) {
+   //这里是T1
+   int sum_1 = 0;  // 执行1次
+   int p = 1; // 执行1次
+   for (; p <= 100; ++p) { //执行 100 次
+     sum_1 = sum_1 + p;  //执行 100 次
+   }
+   //那么这一段执行最多的表示 100次 也就是常量 常量一般直接表示O(1)即可 
 
-   <span class="token comment" spellcheck="true">//这里是T2</span>
-   <span class="token keyword">int</span> sum_2 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 执行 1 次</span>
-   <span class="token keyword">int</span> q <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 执行 1 次</span>
-   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> q <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>q<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//执行 n 次</span>
-     sum_2 <span class="token operator">=</span> sum_2 <span class="token operator">+</span> q<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//执行 n 次</span>
-   <span class="token punctuation">}</span>
-   <span class="token comment" spellcheck="true">//这里一段执行最多的表示 n 次 那么表示为 O(n)</span>
+   //这里是T2
+   int sum_2 = 0; // 执行 1 次
+   int q = 1; // 执行 1 次
+   for (; q <= n; ++q) { //执行 n 次
+     sum_2 = sum_2 + q; //执行 n 次
+   }
+   //这里一段执行最多的表示 n 次 那么表示为 O(n)
 
-   <span class="token comment" spellcheck="true">//这里是T3</span>
-   <span class="token keyword">int</span> sum_3 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 执行一次</span>
-   <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 执行一次</span>
-   <span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 执行一次</span>
-   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//执行 n 次</span>
-     j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 执行 n 次</span>
-     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 执行 n * n 次</span>
-       sum_3 <span class="token operator">=</span> sum_3 <span class="token operator">+</span>  i <span class="token operator">*</span> j<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 执行 n * n 次</span>
-     <span class="token punctuation">}</span>
-   <span class="token punctuation">}</span>
+   //这里是T3
+   int sum_3 = 0; // 执行一次
+   int i = 1; // 执行一次
+   int j = 1; // 执行一次
+   for (; i <= n; ++i) { //执行 n 次
+     j = 1;  // 执行 n 次
+     for (; j <= n; ++j) { // 执行 n * n 次
+       sum_3 = sum_3 +  i * j; // 执行 n * n 次
+     }
+   }
 
-   <span class="token comment" spellcheck="true">//这里一段执行最多的表示 n * n 次 那么表示O(n^2)</span>
-   <span class="token keyword">return</span> sum_1 <span class="token operator">+</span> sum_2 <span class="token operator">+</span> sum_3<span class="token punctuation">;</span>
- <span class="token punctuation">}</span></code></pre>
+   //这里一段执行最多的表示 n * n 次 那么表示O(n^2)
+   return sum_1 + sum_2 + sum_3;
+ }
+</code></pre>
 <p>上面这段代码我们分别假设为$ T1(n) $, $ T2(n) $,$ T3(n)$;那么$ T1(n) $的复杂度为$ O(1) $,$ T(2) $的复杂度为$ O(n) $,$ T(3) $的复杂度为$ O(n^2) $;由此我们可以知道$ T(n) = T1(n) + T2(n) + T3(n) $,那么最终的 $ T(n) = max(O(1),O(n),O(n^2))  $那么我们就可以知道这段代码的$ T(n) = O(n^2) $。</p>
-<h4 id="3-乘法法则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积"><a href="#3-乘法法则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积" class="headerlink" title="3. 乘法法则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积"></a>3. 乘法法则：<span style='color:red'>嵌套代码的复杂度</span>等于嵌套<span style='color:red'>内外</span>代码复杂度的<span style='color:red'>乘积</span></h4><pre class=" language-c"><code class="language-c">
-<span class="token keyword">int</span> <span class="token function">cal</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token keyword">int</span> ret <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//这里执行1次</span>
-   <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这里执行 1 次</span>
-   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//这里执行n次</span>
-     ret <span class="token operator">=</span> ret <span class="token operator">+</span> <span class="token function">f</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这里执行n次</span>
-   <span class="token punctuation">}</span> 
- <span class="token punctuation">}</span> 
-<span class="token comment" spellcheck="true">//这一段代码执行最多的表示 n 次 那么 表示 O(n)</span>
+<h4 id="3-乘法法则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积"><a href="#3-乘法法则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积" class="headerlink" title="3. 乘法法则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积"></a>3. 乘法法则：<span style='color:red'>嵌套代码的复杂度</span>等于嵌套<span style='color:red'>内外</span>代码复杂度的<span style='color:red'>乘积</span></h4><pre class=" language-lang-c"><code class="language-lang-c">
+int cal(int n) {
+   int ret = 0;  //这里执行1次
+   int i = 1; //这里执行 1 次
+   for (; i < n; ++i) { //这里执行n次
+     ret = ret + f(i); //这里执行n次
+   } 
+ } 
+//这一段代码执行最多的表示 n 次 那么 表示 O(n)
 
- <span class="token keyword">int</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这里执行1次</span>
-  <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 这里执行1次</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//这里执行 n 次</span>
-    sum <span class="token operator">=</span> sum <span class="token operator">+</span> i<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 这里执行 n 次</span>
-  <span class="token punctuation">}</span> 
-  <span class="token keyword">return</span> sum<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这里执行1次</span>
-  <span class="token comment" spellcheck="true">//那么这一段代码中最多的执行为 n 次 那么 表示 O(n)</span>
- <span class="token punctuation">}</span>
+ int f(int n) {
+  int sum = 0; //这里执行1次
+  int i = 1; // 这里执行1次
+  for (; i < n; ++i) { //这里执行 n 次
+    sum = sum + i; // 这里执行 n 次
+  } 
+  return sum; //这里执行1次
+  //那么这一段代码中最多的执行为 n 次 那么 表示 O(n)
+ }
 
-<span class="token comment" spellcheck="true">/*
+/*
 这里我们注意第6行这里其实嵌套了f(n)的表达式 那么 最终这段其实真正执行为 O(n) * O(n) 也就是 O(n^2)
-*/</span></code></pre>
-<p>上面这段代码最有<strong>争议</strong>的地方就是<strong>第6行</strong>这里我们如果假设$ f(n) $只是普通操作那么执行次数为<strong>n</strong>次，但是这里<strong>明显</strong>知道利用的是下面的$ f(n) $函数因此，这里我们要<strong>先</strong>计算$ f(n) $的<strong>时间复杂度</strong>为$ O(n) $, 然后由于这个是<strong>嵌套</strong>在一个循环代码块中，所以最终就是:<br>$$<br>T(n) = O(n) * O(n) = O(n^2)<br>$$</p>
-<h2 id="常见的时间复杂度"><a href="#常见的时间复杂度" class="headerlink" title="常见的时间复杂度"></a>常见的时间复杂度</h2><p><img src="https://static001.geekbang.org/resource/image/37/0a/3723793cc5c810e9d5b06bc95325bf0a.jpg" alt="复杂度量级"></p>
+*/
+</code></pre>
+<p>上面这段代码最有<strong>争议</strong>的地方就是<strong>第6行</strong>这里我们如果假设$ f(n) $只是普通操作那么执行次数为<strong>n</strong>次，但是这里<strong>明显</strong>知道利用的是下面的$ f(n) $函数因此，这里我们要<strong>先</strong>计算$ f(n) $的<strong>时间复杂度</strong>为$ O(n) $, 然后由于这个是<strong>嵌套</strong>在一个循环代码块中，所以最终就是:</p>
+<script type="math/tex; mode=display">
+T(n) = O(n) * O(n) = O(n^2)</script><h2 id="常见的时间复杂度"><a href="#常见的时间复杂度" class="headerlink" title="常见的时间复杂度"></a>常见的时间复杂度</h2><p><img src="https://static001.geekbang.org/resource/image/37/0a/3723793cc5c810e9d5b06bc95325bf0a.jpg" alt="复杂度量级"></p>
 <p>这里的复杂度可以分为<strong>两类</strong>一类是<strong>多项式量级</strong>，一类是<strong>非多项式量级</strong>；<strong>非多项式量级</strong>只有两个为$ O(2^n) $和$ O(n!) $,其余都是<strong>多项式量级</strong>。</p>
 <p><strong>注</strong>:<strong>非多项式量级</strong>的算法问题称为<strong>NP(Non-Deterministic Polynomial,非确定多项式)</strong>问题。</p>
-<h3 id="1-O-1"><a href="#1-O-1" class="headerlink" title="1. $ O(1) $"></a>1. $ O(1) $</h3><pre class=" language-c"><code class="language-c">
- <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//执行一次</span>
- <span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 执行一次</span>
- <span class="token keyword">int</span> sum <span class="token operator">=</span> i <span class="token operator">+</span> j<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 执行一次</span>
+<h3 id="1-O-1"><a href="#1-O-1" class="headerlink" title="1. $ O(1) $"></a>1. $ O(1) $</h3><pre class=" language-lang-c"><code class="language-lang-c">
+ int i = 8; //执行一次
+ int j = 6; // 执行一次
+ int sum = i + j; // 执行一次
 
- <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span> <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//执行100次</span>
-     <span class="token comment" spellcheck="true">//</span>
- <span class="token punctuation">}</span></code></pre>
+ for(int i = 0 ; i < 100 ; i++){ //执行100次
+     //
+ }
+</code></pre>
 <p>$ O(1) $说明只要算法<span style='color:red'>不存在</span><strong>循环语句</strong>，<strong>递归语句</strong>，那么即使有<strong>成千上万</strong>行代码，其<strong>时间复杂度</strong>表示为$  O(1)  $。</p>
 <h3 id="2-O-logn-、O-nlogn"><a href="#2-O-logn-、O-nlogn" class="headerlink" title="2. $ O(logn)、O(nlogn) $"></a>2. $ O(logn)、O(nlogn) $</h3><pre><code> i=1; //执行一次
  while (i &lt;= n)  { 
    i = i * 2; //执行2^n次
- }</code></pre><p>这个比较难理解，看下图:</p>
+ }
+</code></pre><p>这个比较难理解，看下图:</p>
 <p><img src="https://static001.geekbang.org/resource/image/9b/9a/9b1c88264e7a1a20b5954be9bc4bec9a.jpg" alt="指数增长"></p>
 <p>由这个图我们可以得到$ n = 2 ^ x$那么我们解$ x $得到$ x = log_2n $,那么上面那段代码的<strong>时间复杂度</strong>就是$ O(log_2n) $。</p>
-<pre class=" language-c"><code class="language-c"> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
- <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> n<span class="token punctuation">)</span>  <span class="token punctuation">{</span>
-   i <span class="token operator">=</span> i <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">;</span>
- <span class="token punctuation">}</span></code></pre>
+<pre class=" language-lang-c"><code class="language-lang-c"> i=1;
+ while (i <= n)  {
+   i = i * 3;
+ }
+</code></pre>
 <p>由这个例子我们可以得到$ n = 3 ^ x $也就是解$ x $可以得到$ x = log_3n $，那么这段代码的<strong>时间复杂度</strong>就是$ O(log_3n) $；<strong>但是</strong>，由于<strong>对数</strong>可以相互转化所以这里都简写成$ O(logn) $了。</p>
 <pre><code>int cat(int n){
  int sum = 0;
@@ -691,8 +704,10 @@ int f(int n){
     while(i &lt;= n){
         i = i * 2;
     }
-}</code></pre><p>上面我们知道<strong>乘法法则</strong>，那么$ O(nlogn) $就很好理解了，上面的代码<strong>函数</strong>$ f(n) $执行了$ O(logn) $,在<strong>函数</strong>$ cat(n) $中 <code>sum = sum + f(i)</code>这里就知道了<br>$$<br>O(n) = O_c(n) <em> O_f(n) = O(n) </em> O(logn) = O(nlogn)<br>$$</p>
-<h3 id="3-O-m-n-、O-m-n"><a href="#3-O-m-n-、O-m-n" class="headerlink" title="3. $ O(m+n)、O(m*n) $"></a>3. $ O(m+n)、O(m*n) $</h3><pre><code>
+}
+</code></pre><p>上面我们知道<strong>乘法法则</strong>，那么$ O(nlogn) $就很好理解了，上面的代码<strong>函数</strong>$ f(n) $执行了$ O(logn) $,在<strong>函数</strong>$ cat(n) $中 <code>sum = sum + f(i)</code>这里就知道了</p>
+<script type="math/tex; mode=display">
+O(n) = O_c(n) * O_f(n) = O(n) * O(logn) = O(nlogn)</script><h3 id="3-O-m-n-、O-m-n"><a href="#3-O-m-n-、O-m-n" class="headerlink" title="3. $ O(m+n)、O(m*n) $"></a>3. $ O(m+n)、O(m*n) $</h3><pre><code>
 int cal(int m, int n) {
   int sum_1 = 0; //这里执行1次
   int i = 1; //这里执行1次
@@ -707,27 +722,32 @@ int cal(int m, int n) {
   }
 
   return sum_1 + sum_2;
-}</code></pre><p>上面的这段代码我们可以看到有<strong>两个</strong>循环结构他们循环的次数<strong>各不相同</strong>一个是<strong>n</strong>次还有一个是<strong>m</strong>次，因为无法<strong>事先评估</strong>m和n的次数，所以计算这种<strong>时间复杂度</strong>的时候，我们得出的结果为:<br>$$<br>O(N) = O(m) + O(n) = O(m+n)<br>$$<br>对于$ O(m * n) $其实就很容易了，可以参考下面的代码：</p>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">cal</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token keyword">int</span> ret <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//这里执行1次</span>
-   <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这里执行 1 次</span>
-   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//这里执行m次</span>
-     ret <span class="token operator">=</span> ret <span class="token operator">+</span> <span class="token function">f</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这里执行m次</span>
-   <span class="token punctuation">}</span> 
- <span class="token punctuation">}</span> 
-<span class="token comment" spellcheck="true">//这一段代码执行最多的表示 n 次 那么 表示 O(n)</span>
+}
+</code></pre><p>上面的这段代码我们可以看到有<strong>两个</strong>循环结构他们循环的次数<strong>各不相同</strong>一个是<strong>n</strong>次还有一个是<strong>m</strong>次，因为无法<strong>事先评估</strong>m和n的次数，所以计算这种<strong>时间复杂度</strong>的时候，我们得出的结果为:</p>
+<script type="math/tex; mode=display">
+O(N) = O(m) + O(n) = O(m+n)</script><p>对于$ O(m * n) $其实就很容易了，可以参考下面的代码：</p>
+<pre class=" language-lang-c"><code class="language-lang-c">int cal(int n) {
+   int ret = 0;  //这里执行1次
+   int i = 1; //这里执行 1 次
+   for (; i < m; ++i) { //这里执行m次
+     ret = ret + f(i); //这里执行m次
+   } 
+ } 
+//这一段代码执行最多的表示 n 次 那么 表示 O(n)
 
- <span class="token keyword">int</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这里执行1次</span>
-  <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 这里执行1次</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//这里执行 n 次</span>
-    sum <span class="token operator">=</span> sum <span class="token operator">+</span> i<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 这里执行 n 次</span>
-  <span class="token punctuation">}</span> 
-  <span class="token keyword">return</span> sum<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这里执行1次</span>
-  <span class="token comment" spellcheck="true">//那么这一段代码中最多的执行为 n 次 那么 表示 O(n)</span>
- <span class="token punctuation">}</span></code></pre>
-<p>这里我们可以计算得到：<br>$$<br>O(N) = O(m) <em> O(n) = O(m</em>n)<br>$$</p>
-<h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><p>由于<strong>空间复杂度</strong>和<strong>时间复杂度</strong>基本上类似，所以这里给出一个定义<strong>表示算法的存储空间与数据规模之间的增长关系</strong>,全称<strong>渐进空间复杂度</strong>。</p>
+ int f(int n) {
+  int sum = 0; //这里执行1次
+  int i = 1; // 这里执行1次
+  for (; i < n; ++i) { //这里执行 n 次
+    sum = sum + i; // 这里执行 n 次
+  } 
+  return sum; //这里执行1次
+  //那么这一段代码中最多的执行为 n 次 那么 表示 O(n)
+ }
+</code></pre>
+<p>这里我们可以计算得到：</p>
+<script type="math/tex; mode=display">
+O(N) = O(m) * O(n) = O(m*n)</script><h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><p>由于<strong>空间复杂度</strong>和<strong>时间复杂度</strong>基本上类似，所以这里给出一个定义<strong>表示算法的存储空间与数据规模之间的增长关系</strong>,全称<strong>渐进空间复杂度</strong>。</p>
 <p>比如 <code>int [] a = new int[n]</code>那么这段就说明<strong>空间复杂度</strong>为$ O(n) $。</p>
 <h2 id="复杂度的比较图"><a href="#复杂度的比较图" class="headerlink" title="复杂度的比较图"></a>复杂度的比较图</h2><p><img src="https://static001.geekbang.org/resource/image/49/04/497a3f120b7debee07dc0d03984faf04.jpg" alt="复杂度比较图"></p>
 <h1 id="课后思考"><a href="#课后思考" class="headerlink" title="课后思考"></a>课后思考</h1><h2 id="你为什么要学习数据结构和算法呢？"><a href="#你为什么要学习数据结构和算法呢？" class="headerlink" title="你为什么要学习数据结构和算法呢？"></a>你为什么要学习数据结构和算法呢？</h2><p>作为一个学生党，对于数据结构和算法的了解仅仅只是在蓝桥杯比赛中实际运用过，但是听过很多前辈与学长的教诲都说明了其重要性，前段时间买了慕课网的一门课程，在学习时知道这些基础的知识对编程的原理掌握以及看懂开源框架十分的重要，因此要花费时间学习这些知识。</p>
@@ -1414,7 +1434,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9.3k</span>&nbsp;字
+                class="white-color">6.3k</span>&nbsp;字
             
             
             
@@ -1582,8 +1602,6 @@ $(function () {
     
      <!-- 掉落星星特效 -->
      
-        <script src="/libs/others/cursor.js" async="async"></script>
-    
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
