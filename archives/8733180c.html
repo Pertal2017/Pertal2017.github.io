@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法学习记录-2, null">
+    <meta name="keywords" content="最近生活的记录, null">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -20,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法学习记录-2 | null</title>
+    <title>最近生活的记录 | null</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -314,7 +314,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = '66127b522849f0392075b28e858526bb3c3f7b34e48c5833cf83d20c3a8a71d5';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('这篇文章需要密码哈，请输入密码')).toString(CryptoJS.enc.Hex)) {
                 alert('您输入的密码有误，请返回主页或者联系我索要相关文章的密码哦');
@@ -327,12 +327,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法学习记录-2</h1>
+                    <h1 class="description center-align post-title">最近生活的记录</h1>
                 </div>
             </div>
         </div>
@@ -449,16 +449,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/">
-                                <span class="chip bg-color">数据结构与算法之美</span>
+                            <a href="/tags/%E5%8F%8D%E6%80%9D/">
+                                <span class="chip bg-color">反思</span>
                             </a>
                         
-                            <a href="/tags/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/">
-                                <span class="chip bg-color">极客时间</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">学习</span>
+                            <a href="/tags/%E7%A7%81%E5%AF%86/">
+                                <span class="chip bg-color">私密</span>
                             </a>
                         
                     </div>
@@ -469,8 +465,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
-                                算法与数据结构
+                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
+                                随笔
                             </a>
                         
                     </div>
@@ -482,28 +478,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-12
+                    2020-07-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-13
+                    2020-07-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    6 分
                 </div>
                 
 
@@ -518,177 +514,475 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>昨天学习了主要是简单的概念学习与时间和空间复杂度分析的学习，今天学习的内容是时间与空间复杂度问题的第二部分，这部分主要是关于最好，最坏，平均，均摊时间复杂度相关的内容。</p>
-<h1 id="知识总结"><a href="#知识总结" class="headerlink" title="知识总结"></a>知识总结</h1><h2 id="最好、最坏、平均情况时间复杂度"><a href="#最好、最坏、平均情况时间复杂度" class="headerlink" title="最好、最坏、平均情况时间复杂度"></a>最好、最坏、平均情况时间复杂度</h2><h3 id="最好、最坏情况时间复杂度"><a href="#最好、最坏情况时间复杂度" class="headerlink" title="最好、最坏情况时间复杂度"></a>最好、最坏情况时间复杂度</h3><p>未优化的版本,不管找没找到都循环都会执行结束</p>
-<pre class=" language-lang-c"><code class="language-lang-c">// n表示数组array的长度
-//这段代码主要的功能是实现 
-//查找一个数组里是否有和x相同的元素 
-//如果相同返回下标 不相同那么-1 
-int find(int[] array, int n, int x) {  
-  //这里由上面可知道数组长度为n 空间复杂度为O(n)
-  int i = 0;  //执行1次
-  int pos = -1; //执行1次
-  for (; i < n; ++i) { //执行n次
-    if (array[i] == x)  //执行n次
-        pos = i; //执行1次
-  }
-  //那么可以知道这个的时间复杂度为O(n)
-  return pos;
-}
-</code></pre>
-<p>优化后的版本，找到后就<strong>跳出</strong>，找不到那么执行整个循环，那么就有<strong>多种</strong>情况</p>
-<pre class=" language-lang-c"><code class="language-lang-c">// n表示数组array的长度
-int find(int[] array, int n, int x) {
-  int i = 0;
-  int pos = -1;
-  for (; i < n; ++i) {
-    if (array[i] == x) {
-       pos = i;
-       break;
-    }
-  }
-  return pos;
-}
-</code></pre>
-<p>因为这个原因所以出现了<strong>最好时间复杂度</strong>和<strong>最坏时间复杂度</strong>以及<strong>平均时间复杂度</strong>。</p>
-<p><strong>最好时间复杂度</strong>就是能够<strong>最快速</strong>情况下找到<strong>跳出</strong>循环的情况，根据上面的例子我们可以知道<strong>最好时间复杂度</strong>就是在数组的<strong>第一个元素</strong>。</p>
-<p><strong>最坏时间复杂度</strong>说明了在<strong>最不理想</strong>的情况下<strong>找出</strong>元素，那么根据上面的例子我们可以推测知道<strong>最坏时间复杂度</strong>就是<strong>没有</strong>找到的情况，那么这时候可能要循环整整<strong>n</strong>次。</p>
-<h3 id="平均情况时间复杂度"><a href="#平均情况时间复杂度" class="headerlink" title="平均情况时间复杂度"></a>平均情况时间复杂度</h3><p>这个需要单独拉出来讲，我们从上面知道<strong>最好时间复杂度</strong>为循环执行<strong>一次</strong>，<strong>最坏时间复杂度</strong>为没找到也就是说循环执行<strong>n次</strong>，那么这里总共的情况可能为<strong>数组内$ [0,n-1] $</strong>和<strong>不在数组中</strong>,那么这里总共的情况就是<script type="math/tex">n+1</script>次，那么这里我们把所有元素遍历的情况<strong>累加</strong>除以可能执行的次数，得到：</p>
-<script type="math/tex; mode=display">
-\frac{1+2+3+\cdots+n+n}{n+1}
-=\frac{\frac{n(n+1)}{2}+n}{n+1}
-=\frac{\frac{n^2+n}{2}+\frac{2n}{2}}{n+1}
-=\frac{\frac{n^2+n+2n}{2}}{n+1}
-=\frac{n^2+3n}{2(n+1)}
-=\frac{n(n+3)}{2(n+1)}</script><p>这里补充一下<strong>等差数列</strong>的求和公式为:</p>
-<script type="math/tex; mode=display">
-S_n=\frac{n*(a_1+a_n)}{2}</script><p>由上面的式子$ \frac{n(n+3)}{2(n+1)} $根据我们之前学习到的<strong>大O表示法</strong>中<strong><span style='color:red'>总复杂度</span></strong>等于<strong><span style='color:red'>量级最大</span></strong>的那段代码的复杂度可以得到下面这个式子:</p>
-<script type="math/tex; mode=display">
-\frac{n(n+3)}{2(n+1)}=\frac{n^2+3n}{2n+2}=\frac{n^2}{2n}=\frac{n}{2}=n</script><p>这里我们将<strong>系数</strong>，<strong>低阶</strong>，<strong>常量</strong>都省略后得到了<strong>时间复杂度</strong>为$ O(n) $，这个计算结论虽然正确但是没有考虑<strong>概率</strong>。</p>
-<p>这里假设<strong>数组中可能性</strong>和<strong>数组外可能性</strong>都是$ \frac{1}{2} $,那么在数组中位置的<strong>概率</strong>为$ \frac{1}{n} $,也就是说明在数组中的各个位置的可能性为:</p>
-<script type="math/tex; mode=display">
-\frac{1}{2}*\frac{1}{n}=\frac{1}{2n}</script><p>那么这样我们就可以推出一个公式为：</p>
-<script type="math/tex; mode=display">
-1*\frac{1}{2n}+2*\frac{1}{2n}+3*\frac{1}{2n}+\cdots+n*\frac{1}{2n}+n*\frac{1}{2}\\
-=\frac{1+2+3+\cdots+n+n^2}{2n}\\
-=\frac{\frac{n(n+1)}{2}+n^2}{2n}=
-\frac{\frac{n(n+1)}{2}+\frac{2n^2}{2}}{2n}\\ 
-=\frac{\frac{n^2+n+2n^2}{2}}{2n}=
-\frac{3n^2+n}{4n}=\frac{3n+1}{4}</script><p>所以根据这个结果我们可以知道<strong>真正</strong>的值可能是$ \frac{3n+1}{4}  $,这个值在<strong>概率论</strong>中为<strong>加权平均值</strong>(<strong>期望值</strong>)，那么<strong>平均时间复杂度</strong>全称其实叫<strong>加权平均时间复杂度</strong>或者<strong>期望时间复杂度</strong>。</p>
-<h3 id="利用三种复杂度表示法的情况？"><a href="#利用三种复杂度表示法的情况？" class="headerlink" title="利用三种复杂度表示法的情况？"></a>利用三种复杂度表示法的情况？</h3><p><strong>一般情况</strong>，不需要<strong>考虑</strong>三种情况，只有在<strong>时间复杂度</strong>有<strong>量级差距</strong>,才使用<strong>最坏时间复杂度</strong>，<strong>最好时间复杂度</strong>和<strong>平均时间复杂度</strong>的情况来区分问题。</p>
-<h2 id="均摊时间复杂度"><a href="#均摊时间复杂度" class="headerlink" title="均摊时间复杂度"></a>均摊时间复杂度</h2><h3 id="均摊时间复杂度与平均复杂度的区分"><a href="#均摊时间复杂度与平均复杂度的区分" class="headerlink" title="均摊时间复杂度与平均复杂度的区分"></a>均摊时间复杂度与平均复杂度的区分</h3><p><strong>平均时间复杂度</strong>只会在某些<strong>特殊情况</strong>使用，而<strong>均摊时间复杂度</strong>可能使用比<strong>平均时间复杂度</strong>更加<strong>特殊</strong>，更加<strong>有限</strong>。</p>
-<pre class=" language-lang-c"><code class="language-lang-c"> // array表示一个长度为n的数组
- // 代码中的array.length就等于n
- int[] array = new int[n];
- int count = 0;
-
- void insert(int val) {
-    if (count == array.length) {
-       int sum = 0;
-       for (int i = 0; i < array.length; ++i) {
-          sum = sum + array[i];
-       }
-       array[0] = sum;
-       count = 1;
-    }
-
-    array[count] = val;
-    ++count;
- }
-</code></pre>
-<p><strong>最坏时间复杂度</strong>：插入时数组没有空位，那么这个时候代码最多执行n次，所以<strong>时间复杂度</strong>为$ O(n) $;</p>
-<p><strong>最好时间复杂度</strong>：插入时数组有空位，那么这个时候代码最多执行1次，所以<strong>时间复杂度</strong>为 $ O(1) $ ;</p>
-<p><strong>平均时间复杂度</strong>：分为<strong>有空位</strong>和<strong>没有空位</strong>两种情况，<strong>有空位</strong>总共有<strong>n</strong>种情况，<strong>没有空位</strong>发生总共有<strong>1</strong>种情况，那么总共会发生<strong>n+1</strong>种情况，每种情况的发生<strong>概率</strong>一致为$ \frac{1}{n+1} $，由此我们可以推算如下公式。</p>
-<script type="math/tex; mode=display">
-1*\frac{1}{n+1}+1*\frac{1}{n+1}+\cdots+1*\frac{1}{n+1}+n*\frac{1}{n+1}\\
-=\frac{n+n}{n+1}=\frac{2n}{n+1}=O(2)=O(1)</script><p><strong>注</strong>:这里<strong>有空位</strong>的<strong>时间复杂度</strong>都为$ O(1) $,因为执行 <code>array[count] = val;</code></p>
-<p><strong>没有空位</strong>的<strong>时间复杂度</strong>为$ O(n) $,这里执行的是:</p>
-<pre class=" language-lang-C"><code class="language-lang-C">if (count == array.length) { //执行1次
-       int sum = 0; //执行1次
-       for (int i = 0; i < array.length; ++i) { //这里数组假设的长度为n 那么这里执行n次
-          sum = sum + array[i]; //循环块内 执行n次
-       }
-       array[0] = sum; //执行1次
-       count = 1; //执行1次
-    }
-/*
-从这里就可以知道根据之前学习的 三 大 原 则的第一条:
-1. 只关注循环执行次数 最多 的代码
-2. 加法法则: 总复杂度 等于 量级最大 的那段代码的复杂度
-3. 乘法法则: 嵌套代码的复杂度 等于 嵌套 内外 代码复杂度的 乘积
-我们可以知道这个情况的时间复杂度为O(n)
-*/
-</code></pre>
-<h3 id="Insert-代码块与-find-代码块的对比"><a href="#Insert-代码块与-find-代码块的对比" class="headerlink" title="$ Insert() $代码块与$find()$代码块的对比"></a>$ Insert() $代码块与$find()$代码块的对比</h3><div class="table-container">
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这几天其实又开始有一些怠惰的现象了，学习不怎么上心，昨天吧甚至一度疯狂的操作买iPad,导致自己一整天都沉迷在看各种知乎的帖子无法自拔，买的很多课程也都怎么上心看了，现在依然有这个情况，所以我索性现在写一个相关的总结，总结一下最近的日常，顺便也熟悉一下<strong>Markdown</strong>的一些语法功能。</p>
+<h1 id="开销"><a href="#开销" class="headerlink" title="开销"></a>开销</h1><p>说到这个电子产品，这段时间我是深受其害，自从考完试成绩出来的那一刻，我就抑制不住自己了，开始疯狂的花钱，成绩肯定是很理想考了<strong>337</strong>分，但是就是这个分数让我这段时间有点飘，飘飘然的自己花了很多很多的钱，所以这里我想列个表格算一下自己总共花了多少钱。</p>
+<p><img src="https://s1.ax1x.com/2020/07/14/UUZf2V.png" alt="UUZf2V.png"></p>
+<h2 id="电子产品"><a href="#电子产品" class="headerlink" title="电子产品"></a>电子产品</h2><p>这里我准备分类，包括后面可能要花的钱我都准备一一列出，来说说我这段时间的实际花费，这种报复性的消费的确以后得注意，所以这里必须列清楚，列明白。</p>
+<h3 id="手机与其配件"><a href="#手机与其配件" class="headerlink" title="手机与其配件"></a>手机与其配件</h3><p>考完试没过半个月吧，我就换了一台手机又一次成为了“果粉”，实在是苹果的手机太香了，香的我有点上头，想买华为又苦于自己没有那么多钱，所以就入了苹果的iPhone SE 2020,同时买了个AirPods Pro,最近听说IOS 14 对 AirPods Pro要有新功能，所以也是很期待，但是这里还是得列清楚，列明白。</p>
+<h4 id="手机与耳机以及其售后服务"><a href="#手机与耳机以及其售后服务" class="headerlink" title="手机与耳机以及其售后服务"></a>手机与耳机以及其售后服务</h4><div class="table-container">
 <table>
 <thead>
 <tr>
-<th>$ Insert() $代码</th>
-<th>$ find() $代码</th>
+<th style="text-align:left">序列</th>
+<th style="text-align:center">产品名称</th>
+<th style="text-align:right">金额花费</th>
+<th style="text-align:right">购买地址</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>// array表示一个长度为n的数组</code><br/> <code>// 代码中的array.length就等于n</code><br/> <code>int[] array = new int[n];</code><br/> <code>int count = 0;</code><br/> <br/> <code>void insert(int val) {</code><br/>    <code>if (count == array.length) {</code><br/>     <code>int sum = 0;</code><br/>    <code>for (int i = 0; i &lt; array.length; ++i) {</code><br/>       <code>sum = sum + array[i];</code><br/>    <code>}</code><br/>    <code>array[0] = sum;</code><br/>     <code>count = 1;</code><br/>   <code>}</code><br/><br/><code>array[count] = val;</code><br/>  <code>++count;</code><br/> <code>}</code></td>
-<td><code>// n表示数组array的长度</code><br/>  <code>int find(int[] array, int n, int x) {</code><br/>  <code>int i = 0;</code><br/> <code>int pos = -1;</code><br/>  <code>for (; i &lt; n; ++i) {</code><br/>   <code>if (array[i] == x) {</code><br/>    <code>pos = i;</code><br/>  <code>break;</code><br/>  <code>}</code><br/>  <code>}</code><br/> <code>return pos;</code><br/>  <code>}</code></td>
+<td style="text-align:left">1</td>
+<td style="text-align:center">iPhone SE 2020 128GB + 换休无忧服务</td>
+<td style="text-align:right">3644.94</td>
+<td style="text-align:right">京东自营店</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:center">AirPods Pro主动降噪无线蓝牙耳机</td>
+<td style="text-align:right">1799</td>
+<td style="text-align:right">京东自营店</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:center">耳机5年全保修服务</td>
+<td style="text-align:right">189</td>
+<td style="text-align:right">京东自营店</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:center">耳机3年全保换新服务</td>
+<td style="text-align:right">169</td>
+<td style="text-align:right">京东自营店</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">苹果鉴定查询服务</td>
+<td style="text-align:right">6</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center">总计</td>
+<td style="text-align:right">5807.94</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h4 id="1-第一个区别"><a href="#1-第一个区别" class="headerlink" title="1. 第一个区别"></a>1. 第一个区别</h4><p>$ Insert() $中<strong>大部分</strong>复杂度为$ O(1) $,只有在<strong>空间不够</strong>时复杂度为$ O(n) $;$ find() $中<strong>极端情况</strong>复杂度为$ O(1) $。</p>
-<h4 id="2-第二个区别"><a href="#2-第二个区别" class="headerlink" title="2. 第二个区别"></a>2. 第二个区别</h4><p>$ Insert() $中$ O(1) $与$ O(n) $出现情况很<strong>规律</strong>，有<strong>时序关系</strong>，比如完成<strong>一个</strong>$O(n)$操作后面接着$ n - 1$个$O(1)$操作，如此循环。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>因此遇到这种代码我们不需要使用<strong>平均时间复杂度</strong>的分析步骤<strong>找出概率</strong>，<strong>计算加权平均值</strong>，而是使用一个新的方法<strong>摊还分析法</strong>，因此这种<strong>时间复杂度</strong>称为<strong>均摊时间复杂度</strong>，这里来说步骤就是<strong>一次</strong>复杂度<strong>不同</strong>的情况，后面跟着<strong>一堆</strong>复杂度<strong>相同</strong>的情况，并且<strong>循环往复</strong>；就比如上面的$ Insert() $函数为<strong>一次</strong>$ O(n) $操作，跟着$ n - 1$次的$ O(1) $操作，如此<strong>循环往复</strong>。</p>
-<p><strong>总的来说</strong>，<strong>均摊时间复杂度</strong>可以称为<span style='color:red;'><strong>特殊</strong></span>的<strong>平均时间复杂度</strong>。</p>
-<h1 id="课后思考题"><a href="#课后思考题" class="headerlink" title="课后思考题"></a>课后思考题</h1><pre class=" language-lang-c"><code class="language-lang-c">
-// 全局变量，大小为10的数组array，长度len，下标i。
-int array[] = new int[10]; 
-int len = 10;
-int i = 0;
-
-// 往数组中添加一个元素
-void add(int element) {
-   if (i >= len) { // 数组空间不够了
-     // 重新申请一个2倍大小的数组空间
-     int new_array[] = new int[len*2];
-     // 把原来array数组中的数据依次copy到new_array
-     for (int j = 0; j < len; ++j) {
-       new_array[j] = array[j];
-     }
-     // new_array复制给array，array现在大小就是2倍len了
-     array = new_array;
-     len = 2 * len;
-   }
-   // 将element放到下标为i的位置，下标i加一
-   array[i] = element;
-   ++i;
-}
-</code></pre>
-<p><strong>思路</strong></p>
-<p>这里的$ add() $函数一共有两种情况<strong>数组空间够</strong>和<strong>数组空间不够</strong>两种情况：</p>
-<p>首先我们分析<strong>最好时间复杂度</strong>，这个时候属于<strong>数组空间够</strong>的情况，那么这里只需要执行 <code>array[i] = element; //执行1次</code>以及 <code>++i; //执行一次</code>所以这种情况下<strong>时间复杂度</strong>为$ O(1) $；</p>
-<p>其次分析<strong>最坏时间复杂度</strong>，这个时候属于<strong>数据空间不够</strong>的情况，那么这里下面需要执行的就是$ add() $函数的整个代码：</p>
-<pre class=" language-lang-c"><code class="language-lang-c">void add(int element) {
-   if (i >= len) { // 数组空间不够了 //执行1次
-     // 重新申请一个2倍大小的数组空间
-     int new_array[] = new int[len*2];  //执行1次
-     // 把原来array数组中的数据依次copy到new_array
-     for (int j = 0; j < len; ++j) { //执行10次 但是 由于不知道这里len可能的情况 所以 假设这里实际可以为n次
-       new_array[j] = array[j]; //这个执行n次
-     }
-     // new_array复制给array，array现在大小就是2倍len了
-     array = new_array; //执行1次
-     len = 2 * len;  //执行1次
-   }
-   // 将element放到下标为i的位置，下标i加一
-   array[i] = element; //执行1次
-   ++i; //执行一次
-}
-</code></pre>
-<p>那么这种情况下的<strong>时间复杂度</strong>其实为$O(n)$；</p>
-<p>最后我们计算<strong>平均复杂度</strong>，我们可以从实际出发在<strong>一次</strong>时间复杂度为$ O(n) $的情况后，会出现 $ n - 1 $次时间复杂度为$ O(1) $的情况，因此这里其实需要计算的是<strong>均摊时间复杂度</strong>，这种情况下我们可以分析<strong>数据空间够</strong>有<strong>n*</strong>种可能的情况，<strong>数据空间不够</strong>有<strong>1</strong>种情况，因此这里总共有<strong>n+1</strong>次情况，因此可以推出的公式为：</p>
-<script type="math/tex; mode=display">
-1*\frac{1}{n+1}+1*\frac{1}{n+1}+\cdots+1*\frac{1}{n+1}+n*\frac{1}{n+1}\\
-=\frac{n+n}{n+1}=\frac{2n}{n+1}=O(2)=O(1)</script><p>其实这里可以发现和$ Insert() $函数的<strong>均摊复杂度</strong>是一致的，所以这一题其实就是举的一个<strong>特定情况</strong>的<strong>平均时间复杂度</strong>问题。</p>
+<p>这里的花费就已经有<strong>5801.94</strong>元，将近<strong>6000</strong>元，之前好像没仔细算，但是这么算一下，这里花费真的很多了。</p>
+<h4 id="手机与耳机配件"><a href="#手机与耳机配件" class="headerlink" title="手机与耳机配件"></a>手机与耳机配件</h4><p>买了手机怎么可能收手，后面我还买了配件，当然很多配件的钱不是我自己付的，但是有一部分也是我自己付的，所以这里也要统计一下，况且好友代付貌似都没有记录，这个账也不好算呐，这里的金额总计是<strong>562.49</strong>元。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>序列</th>
+<th style="text-align:center">产品名称</th>
+<th style="text-align:right">金额花费</th>
+<th style="text-align:right">购买地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:center">紫米18W充电头</td>
+<td style="text-align:right">34.90</td>
+<td style="text-align:right">京东自营店</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:center">华为无线充电27w原装</td>
+<td style="text-align:right">159-10(优惠)=149</td>
+<td style="text-align:right">京东自营店</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:center">京东京造充电宝 30000毫安</td>
+<td style="text-align:right">94</td>
+<td style="text-align:right">京东自营店</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:center">紫米充电套装</td>
+<td style="text-align:right">68.90</td>
+<td style="text-align:right">京东自营店</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align:center">开美智海绵耳塞</td>
+<td style="text-align:right">17</td>
+<td style="text-align:right">京东直营店</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align:center">耳机防尘贴</td>
+<td style="text-align:right">10.20</td>
+<td style="text-align:right">京东 帆睿数码店</td>
+</tr>
+<tr>
+<td>7</td>
+<td style="text-align:center">耳帽耳套</td>
+<td style="text-align:right">21.69</td>
+<td style="text-align:right">京东 与乐旗舰店</td>
+</tr>
+<tr>
+<td>8</td>
+<td style="text-align:center">紫米快充线</td>
+<td style="text-align:right">69</td>
+<td style="text-align:right">淘宝 zmi旗舰店</td>
+</tr>
+<tr>
+<td>9</td>
+<td style="text-align:center">亿色iPhoneSE钢化膜</td>
+<td style="text-align:right">35</td>
+<td style="text-align:right">淘宝 esr旗舰店</td>
+</tr>
+<tr>
+<td>10</td>
+<td style="text-align:center">AirPods Pro 保护套</td>
+<td style="text-align:right">26.8</td>
+<td style="text-align:right">imoblie迁千牵专卖店</td>
+</tr>
+<tr>
+<td>11</td>
+<td style="text-align:center">iPhone SE 2020 保护壳</td>
+<td style="text-align:right">36</td>
+<td style="text-align:right">广得利旗舰店</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">总计</td>
+<td style="text-align:right">562.49</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="iPad与其配件"><a href="#iPad与其配件" class="headerlink" title="iPad与其配件"></a>iPad与其配件</h3><h4 id="iPad预估花费"><a href="#iPad预估花费" class="headerlink" title="iPad预估花费"></a>iPad预估花费</h4><p>因为录取通知书即将要到了，所以后面iPad也有相关的花费这里，就把花费也同时计算一下，毕竟也提前准备了配件，那么这里总计的金额就是<strong>9000</strong>元。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>序列</th>
+<th style="text-align:center">产品名称</th>
+<th style="text-align:right">金额花费</th>
+<th style="text-align:right">购买地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:center">12.9英寸 iPad Pro 256GB</td>
+<td style="text-align:right">7899</td>
+<td style="text-align:right">无锡恒隆广场自营店</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:center">AppleCare+ 服务计划(适用于iPad Pro)</td>
+<td style="text-align:right">799</td>
+<td style="text-align:right">无锡恒隆广场自营店</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:center">AirPods Pro</td>
+<td style="text-align:right">753</td>
+<td style="text-align:right">无锡恒隆广场自营店</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:center">Apple Pencil(第二代)</td>
+<td style="text-align:right">895</td>
+<td style="text-align:right">无锡恒隆广场自营店</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">优惠</td>
+<td style="text-align:right">-1346</td>
+<td style="text-align:right">出售给张高</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">总计</td>
+<td style="text-align:right">9000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="iPad配件"><a href="#iPad配件" class="headerlink" title="iPad配件"></a>iPad配件</h4><p>这里相关的配件也有很多，所以这里也计算下这个花费，总计<strong>432.97</strong>元。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>序列</th>
+<th style="text-align:center">产品名称</th>
+<th style="text-align:right">金额花费</th>
+<th style="text-align:right">购买地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:center">Anker USB-C 充电器 PD 30W</td>
+<td style="text-align:right">149</td>
+<td style="text-align:right">京东自营店</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:center">iPad Pro 2020 保护套 防弯硬背板</td>
+<td style="text-align:right">108</td>
+<td style="text-align:right">锐益数码专营店</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:center">亿色 2020全屏 iPad Pro 钢化膜</td>
+<td style="text-align:right">76.5</td>
+<td style="text-align:right">esr旗舰店</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:center">亿色 2020 镜头膜</td>
+<td style="text-align:right">49.5</td>
+<td style="text-align:right">esr旗舰机</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align:center">二代笔 笔套</td>
+<td style="text-align:right">25</td>
+<td style="text-align:right">信诚e家</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align:center">笔尖套</td>
+<td style="text-align:right">8.95</td>
+<td style="text-align:right">海明视数码专营店</td>
+</tr>
+<tr>
+<td>7</td>
+<td style="text-align:center">苹果收纳盒</td>
+<td style="text-align:right">16.02</td>
+<td style="text-align:right">博音旗舰店</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">总计</td>
+<td style="text-align:right">432.97</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="其他花费"><a href="#其他花费" class="headerlink" title="其他花费"></a>其他花费</h3><p>其他花费就是一些杂七杂八的了，还有软件方面的花费了，这里总计高达了<strong>1290</strong>元，其中<strong>699</strong>元的<strong>研磨院自习室</strong>算是很大的浪费了！！！</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>序列</th>
+<th style="text-align:center">产品名称</th>
+<th style="text-align:right">金额花费</th>
+<th style="text-align:right">购买地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:center">瑞士军刀 大容量 旅行书包</td>
+<td style="text-align:right">146</td>
+<td style="text-align:right">svvisssvver箱包旗舰店</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:center">密码软件</td>
+<td style="text-align:right">6</td>
+<td style="text-align:right">Apple</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:center">Notability</td>
+<td style="text-align:right">60</td>
+<td style="text-align:right">Apple</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:center">GoodNotes 5</td>
+<td style="text-align:right">50</td>
+<td style="text-align:right">Apple</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align:center">Alook浏览器</td>
+<td style="text-align:right">6</td>
+<td style="text-align:right">Apple</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align:center">我的小目标</td>
+<td style="text-align:right">68</td>
+<td style="text-align:right">Apple</td>
+</tr>
+<tr>
+<td>7</td>
+<td style="text-align:center">蒙哥英语原版阅读器</td>
+<td style="text-align:right">18</td>
+<td style="text-align:right">Apple</td>
+</tr>
+<tr>
+<td>8</td>
+<td style="text-align:center">IObit Uninstaller 9 Pro</td>
+<td style="text-align:right">69</td>
+<td style="text-align:right">APSGO</td>
+</tr>
+<tr>
+<td>9</td>
+<td style="text-align:center">IObit Smart Defrag 6 Pro</td>
+<td style="text-align:right">69</td>
+<td style="text-align:right">APSGO</td>
+</tr>
+<tr>
+<td>10</td>
+<td style="text-align:center">IObit Advanced SystemCare 13 Pro</td>
+<td style="text-align:right">99</td>
+<td style="text-align:right">APSGO</td>
+</tr>
+<tr>
+<td>11</td>
+<td style="text-align:center">Iris Pro 护眼软件</td>
+<td style="text-align:right">55.10</td>
+<td style="text-align:right">APSGO</td>
+</tr>
+<tr>
+<td>12</td>
+<td style="text-align:center">研磨院自习室</td>
+<td style="text-align:right">699</td>
+<td style="text-align:right">无锡清名桥研磨院</td>
+</tr>
+<tr>
+<td>13</td>
+<td style="text-align:center">三星 970Evo 512GB</td>
+<td style="text-align:right">800</td>
+<td style="text-align:right">五爱广场</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">总计</td>
+<td style="text-align:right">2145.1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="课程花费"><a href="#课程花费" class="headerlink" title="课程花费"></a>课程花费</h3><p>除了这些我还买了一些相关的学习课程 ，因此这里的课程也要计算一下价格，那么这里总共的花费就是<strong>2942.09</strong>元。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>序列</th>
+<th style="text-align:center">产品名称</th>
+<th style="text-align:right">金额花费</th>
+<th style="text-align:right">购买地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:center">SVip考研视频</td>
+<td style="text-align:right">60</td>
+<td style="text-align:right">尖端考研</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:center">ABOBOO年费</td>
+<td style="text-align:right">299</td>
+<td style="text-align:right">ABOBOO</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:center">MindMaster全平台终身订阅版</td>
+<td style="text-align:right">680</td>
+<td style="text-align:right">深圳亿图公司</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:center">Java 全站通</td>
+<td style="text-align:right">453.30</td>
+<td style="text-align:right">How2J</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align:center">Java 练习题答案</td>
+<td style="text-align:right">27.84</td>
+<td style="text-align:right">How2J</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align:center">慕课网课程</td>
+<td style="text-align:right">963.05</td>
+<td style="text-align:right">慕课网</td>
+</tr>
+<tr>
+<td>7</td>
+<td style="text-align:center">数据结构与算法之美</td>
+<td style="text-align:right">29.9</td>
+<td style="text-align:right">极客时间</td>
+</tr>
+<tr>
+<td>8</td>
+<td style="text-align:center">编译原理之美</td>
+<td style="text-align:right">69</td>
+<td style="text-align:right">极客时间</td>
+</tr>
+<tr>
+<td>9</td>
+<td style="text-align:center">资源栈的所有内容</td>
+<td style="text-align:right">360</td>
+<td style="text-align:right">资源栈</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">总计</td>
+<td style="text-align:right">2942.09</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a>最后总结</h1><p>计算完里的花费我都不想写别的东西了，所以这里最后就计算一下自己的总共花费吧，果然没出我所料那这么算我可能这几个月的花费都要破<strong>25000</strong>元大关了！</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>序列</th>
+<th>产品总计大类</th>
+<th>总计金额</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>手机与耳机以及其售后服务</td>
+<td>5807.94</td>
+</tr>
+<tr>
+<td>2</td>
+<td>手机与耳机配件</td>
+<td>562.49</td>
+</tr>
+<tr>
+<td>3</td>
+<td>iPad预估花费</td>
+<td>9000</td>
+</tr>
+<tr>
+<td>4</td>
+<td>其他花费</td>
+<td>2145.1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>课程花费</td>
+<td>2942.09</td>
+</tr>
+<tr>
+<td></td>
+<td>总计</td>
+<td>20457.62</td>
+</tr>
+</tbody>
+</table>
+</div>
 
             </div>
             <hr/>
@@ -714,7 +1008,7 @@ void add(int element) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://pertal.club/archives/384faa82.html">https://pertal.club/archives/384faa82.html</a>
+                    <a href="https://pertal.club/archives/8733180c.html">https://pertal.club/archives/8733180c.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -752,16 +1046,12 @@ void add(int element) {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/">
-                                    <span class="chip bg-color">数据结构与算法之美</span>
+                                <a href="/tags/%E5%8F%8D%E6%80%9D/">
+                                    <span class="chip bg-color">反思</span>
                                 </a>
                             
-                                <a href="/tags/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/">
-                                    <span class="chip bg-color">极客时间</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">学习</span>
+                                <a href="/tags/%E7%A7%81%E5%AF%86/">
+                                    <span class="chip bg-color">私密</span>
                                 </a>
                             
                         </div>
@@ -1063,9 +1353,10 @@ void add(int element) {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/archives/8733180c.html">
                     <div class="card-image">
@@ -1083,9 +1374,9 @@ void add(int element) {
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1098,6 +1389,7 @@ void add(int element) {
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1120,24 +1412,24 @@ void add(int element) {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/archives/a146fb38.html">
+                <a href="/archives/384faa82.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="算法学习记录-1">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="算法学习记录-2">
                         
-                        <span class="card-title">算法学习记录-1</span>
+                        <span class="card-title">算法学习记录-2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            算法学习记录Day01,只是一些基本的介绍
+                            算法学习记录Day01,接着之前的时间复杂度问题
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-12
                             </span>
                         <span class="publish-author">
                             
@@ -1338,13 +1630,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 
