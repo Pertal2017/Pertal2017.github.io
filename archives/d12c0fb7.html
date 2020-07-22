@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Github+Hexo搭建博客教程, null">
+    <meta name="keywords" content="算法学习记录-4, null">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -20,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Github+Hexo搭建博客教程 | null</title>
+    <title>算法学习记录-4 | null</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -327,12 +327,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/27.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Github+Hexo搭建博客教程</h1>
+                    <h1 class="description center-align post-title">算法学习记录-4</h1>
                 </div>
             </div>
         </div>
@@ -449,12 +449,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Github/">
-                                <span class="chip bg-color">Github</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/">
+                                <span class="chip bg-color">数据结构与算法之美</span>
                             </a>
                         
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/">
+                                <span class="chip bg-color">极客时间</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">学习</span>
                             </a>
                         
                     </div>
@@ -465,8 +469,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
-                                教程
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                算法与数据结构
                             </a>
                         
                     </div>
@@ -478,28 +482,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-10
+                    2020-07-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-10
+                    2020-07-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    5 分
                 </div>
                 
 
@@ -514,51 +518,126 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>因为毕业了，所以为了以后能够有一个记录的博客，所以花费了一段时间，搭建了一个利用GitHub+Hexo实现的个人博客<del>(最大的原因是因为可以白嫖)</del> ，但是之前使用的博客没有用过Markdown进行相关的内容写作，因此教程可能有些地方并不美观，还请各位小伙伴能够见谅，有问题也可以在下方留言，有时间我会回答的。</p>
-<p>首先我们要了解一下我们搭建博客需要使用的框架Hexo，这个框架是一个高效的静态站点生成框架，基于Node.js。通过这个框架我们可以利用MarkDown语法来撰写自己的博客内容，并且写文章，除了没有可视化管理界面以外一切都很方便(这个问题可以用插件解决)，废话少说下面介绍。</p>
-<h1 id="准备与安装"><a href="#准备与安装" class="headerlink" title="准备与安装"></a>准备与安装</h1><p>在这搭建自己的博客之前我们需要完成三个主要的步骤，首先要拥有你自己的<strong>Github账号</strong>其次要在你的系统中安装好<strong>Git</strong>以及<strong>Node.js</strong>。</p>
-<h2 id="Github的注册"><a href="#Github的注册" class="headerlink" title="Github的注册"></a>Github的注册</h2><p><a href="https://www.github.com" target="_blank" rel="noopener">Github</a> 的注册网上有很多的教程，由于我自己已经有了一个Github账号，因此这里给出网上比较新的注册教程，虽然GIthub网站是英文的网站，但是一般的浏览器都自带翻译功能，相信这个难不倒各位————<a href="https://blog.csdn.net/JCtry/article/details/107191143" target="_blank" rel="noopener">Gihub注册教程</a></p>
-<h2 id="Git的安装"><a href="#Git的安装" class="headerlink" title="Git的安装"></a>Git的安装</h2><p>因为我们需要把自己本地仓库的内容上传到Github上面去，所以我们可能需要用到版本控制工具<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>，由于这个工具并不是GUI工具所以可能需要学习一些命令，本文需要用到的命令下面都会标出，这里同样给出一个<a href="https://blog.csdn.net/aiwst/article/details/106924863" target="_blank" rel="noopener">Git的安装教程</a>照着安装即可。</p>
-<p><strong>Note：</strong></p>
-<p>​    这里提示一下，添加路径的时候要选择 <code>Use Git from the Windows Command Prompt</code>,这样做的好处可以让我们在Windows的控制台打开Git。安装完成之后Windows系统下按住<code>Win+R</code>输入<code>cmd</code>打开控制台输入<code>git --version</code>验证是否安装成功，效果如下图：</p>
-<p><img src="https://s1.ax1x.com/2020/07/10/UuXJvq.png" alt="UuXJvq.png" style="zoom:85%;" /></p>
-<h2 id="Node-js的安装"><a href="#Node-js的安装" class="headerlink" title="Node.js的安装"></a>Node.js的安装</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>安装就比较简单了直接点击<a href="https://nodejs.org/dist/v12.18.2/node-v12.18.2-x64.msi" target="_blank" rel="noopener">下载</a>其实就可以了，我这里给出的是长期支持的x64版本如果需要其他版本可以上官网查看，安装只需要一路Next即可。</p>
-<p>安装完成之后Windows系统下按住<code>Win+R</code>输入<code>cmd</code>打开控制台,输入 <code>node -v</code> 和 <code>npm - v</code> ,如果出现版本号，就安装成功了，如下图：</p>
-<p><img src="https://s1.ax1x.com/2020/07/10/UuXfaD.png" alt="UuXfaD.png"></p>
-<p>当上面的步骤完成之后，我们就可以开始利用我们的Github搭建我们自己的免费博客了！</p>
-<h1 id="GithubPage设置"><a href="#GithubPage设置" class="headerlink" title="GithubPage设置"></a>GithubPage设置</h1><h2 id="GithubPage仓库创建"><a href="#GithubPage仓库创建" class="headerlink" title="GithubPage仓库创建"></a>GithubPage仓库创建</h2><p>GithubPage是Github提供的一个搭建博客的功能，利用这个我们可以免费搭建属于自己的个人博客，打开<a href="https://github.com" target="_blank" rel="noopener">https://github.com</a> ,新建一个项目，如图所示：</p>
-<p><img src="https://s1.ax1x.com/2020/07/10/UujmW9.png" alt="UujmW9.png"></p>
-<p>之后输入自己的项目名字，项目名为 <code>创建的用户名.github.io</code> 注意的是这里的 <code>.github.io</code> 不能少，同样的你的用户名必须和你的<strong>Github用户名</strong>完全一致，不能改动，例如我这里的账号叫 <code>PertalDemoTest</code> ,那么我创建的 <code>repository</code> 名称就叫 <code>PertalDemoTest.github.io</code> , 下面的 <code>Description</code> 用来填写对这个仓库的描述，其他默认即可，当然这里可以<strong>勾选</strong><code>Initialize this repository with a ReADME</code>，这样可以直接初始化，这里我就不勾选了。</p>
-<p><img src="https://s1.ax1x.com/2020/07/10/UKSBcj.png" alt="UKSBcj.png"></p>
-<p>创建完成之后，出现的界面如下所示:</p>
-<p><img src="https://s1.ax1x.com/2020/07/10/UKSqUK.png" alt="UKSqUK.png" style="zoom:50%;" /></p>
-<p>到这里基本的仓库创建就完成了。</p>
-<h2 id="如何利用Git进行初始化"><a href="#如何利用Git进行初始化" class="headerlink" title="如何利用Git进行初始化"></a>如何利用Git进行初始化</h2><p>完成了仓库的创建之后，我们需要对我们自己新建的这个仓库进行一个初始化，这里首先在本地新建一个文件夹用来保存后续上传到仓库的配置，对文件夹<strong>鼠标右键</strong>后选择<strong>Git Bash Here</strong>弹出Git的界面后，我们首先进行c初始化输入 <code>git init</code> 之后一下设置用户名和邮箱的设置，这里分别输入 <code>git config user.name &quot;你的Github用户名&quot;</code> 和 <code>git config user.email &quot;你创建的Github账户邮箱&quot;</code> 当然 如果你只有一个账户的话可以直接设置 <code>git config --global user.name &quot;你的Github用户名&quot;</code>和 <code>git config --global user.email &quot;你创建的Github账户邮箱&quot;</code> 设置完成。</p>
-<p><img src="https://s1.ax1x.com/2020/07/10/UKPWZR.png" alt="UKPWZR.png"></p>
-<p>这里我们使用<strong>SSH</strong>的登入方式，因为这种登录方式比较简单，直接输入 <code>ssh-keygen -t rsa -C &quot;你的电子邮箱&quot;</code>即可，然后一路回车，如果碰到有<strong>(y/n)</strong>打一个<strong>y</strong>继续回车，这样我们就生成了自己的SSH密钥。</p>
-<p><img src="https://s1.ax1x.com/2020/07/10/UKimWT.png" alt="UKimWT.png"></p>
-<p>然后打开你的Github找到<strong>Settings</strong>，找到<strong>SSH and GPG keys</strong>点击<strong>New SSH key</strong>之后到你的 <code>C:/用户/你的用户名/.ssh</code>下找到<code>id_rsa.pub</code>文件利用<strong>记事本</strong>打开复制里面的内容，放入刚刚的页面中，这里的<strong>Title</strong>可以随意，如下图所示：</p>
-<p><img src="https://s1.ax1x.com/2020/07/10/UKkSKg.png" alt="UKkSKg.png"></p>
-<p><img src="https://s1.ax1x.com/2020/07/10/UKATAA.png" alt="UKATAA.png"></p>
-<p>同时这里设置一下，可能需要输入一下自己的密码，验证一下，之后我们在控制台中输入 <code>ssh -T git@github.com</code> 出现下图提示就成功了。</p>
-<p><img src="https://s1.ax1x.com/2020/07/10/UKZxBD.png" alt="UKZxBD.png"></p>
-<p>需要注意的是后面提示没有提供<strong>shell access</strong>这里我们需要在个人账户的设置中找到<strong>Email</strong>设置下将<strong>Keep my email address private</strong>的勾选取消，然后在<strong>Profile</strong>设置中找到<strong>Public email</strong>选择自己的邮箱拉到下面点击<strong>Update profile</strong>解决后面<strong>无法push</strong>的问题。</p>
-<p>接下来我们可以参照<strong>Github的提示</strong>测试一下连接我们的远程仓库</p>
-<p><img src="https://s1.ax1x.com/2020/07/10/UKmjTe.png" alt="UKmjTe.png"></p>
-<p><a href="https://imgchr.com/i/UKnmfs" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/07/10/UKnmfs.png" alt="UKnmfs.png"></a></p>
-<p>之后刷新一下我们的仓库，可以看到一个<code>README.md</code>文件，到这里我们已经完成了本地与远程仓库的连接。</p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>接下来，刷新一下我们的仓库页面，找到<strong>Settings</strong>下拉找到<strong>GitHub Pages</strong>点击<strong>Choose a theme</strong>选择一个喜欢的主题，选择<strong>Select theme</strong>然后在网址框中输入<code>你的用户名.github.io</code>可以发现已经有一个页面的雏形了。</p>
-<p><img src="https://s1.ax1x.com/2020/07/10/UKuZDK.png" alt="UKuZDK.png"></p>
-<p>接下来我们就开始安装Hexo,在Git控制台中输入 <code>npm i hexo-cli -g</code> ，可能会有<strong>WARN</strong>这里可以直接无视，接下来输入 <code>hexo init</code> 进行初始化，然后输入 <code>npm install</code> 安装必备组件，这里可能有报错，我们可以将隐藏的 <code>.git</code>先移到别处删除我们刚刚创建的<code>REAMD.md</code>文件,等待安装结束后在移回来，接下来我们输入 <code>hexo g</code> 和 <code>hexo s</code> 然后浏览器输入<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> , 就可以看到我们的博客啦，效果如下：</p>
-<p><img src="https://s1.ax1x.com/2020/07/10/UK1iXn.png" alt="UK1iXn.png"></p>
-<p>到这里整个博客就算搭建完成了，接下来我们就可以写我们自己的文章了。</p>
-<h1 id="写文章，发布文章"><a href="#写文章，发布文章" class="headerlink" title="写文章，发布文章"></a>写文章，发布文章</h1><p>首先安装一个扩展 <code>npm i hexo-deployer-git</code> 然后输入 <code>hexo new &quot;文章名&quot;</code>就可以创建一篇文章啦，之后打开 <code>根目录/source/_posts</code>里面就可以发现创建好的文章，这里编写文章可能需要学习一下MarkDown，并且下载一个支持<code>.md</code>文件的程序，这里我用的是<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora</a>,当然市面还有其他各类的软件，这里就看个人喜好进行选择了，编写完成后 打开<strong>根目录</strong>下的 <code>_config.yml</code> 文件修改<strong>deploy</strong>后保存。</p>
-<pre><code>deploy:
-  type: git
-  repository: https://github.com/你的github用户名/你的github用户.github.io
-  branch: master
-</code></pre><p> <code>hexo g</code> 生成文件然后<code>hexo d</code>就可以将自己的文章发布到网站上了，输入 <code>用户名.github.io</code> 就可以访问自己刚刚生成的文章了，到这里基本的博客就搭建完成了。</p>
-<h1 id="个性化设置"><a href="#个性化设置" class="headerlink" title="个性化设置"></a>个性化设置</h1><p>这里埋一个坑，内容很多，慢慢填坑…</p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>了解数组的构成之后，紧接着今天学习的就是有关链表相关的内容，链表作为一个基础的数据结构，有着十分重要的使用场景，因此一般都是用来作为开头菜进行相关的内容学习。</p>
+<h1 id="知识总结"><a href="#知识总结" class="headerlink" title="知识总结"></a>知识总结</h1><h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p><strong>定义</strong>：缓存是一种提高<strong>数据读取性能</strong>的一种技术。</p>
+<h3 id="缓存的淘汰策略"><a href="#缓存的淘汰策略" class="headerlink" title="缓存的淘汰策略"></a>缓存的淘汰策略</h3><ol>
+<li>先进先出策略 FIFO(First In, First Out)：先进去的先出来</li>
+<li>最少使用策略 LFU(Least Frequently Used)：使用最少的淘汰</li>
+<li>最近最少使用策略 LRU(Least Recently Used)：最近使用最少的淘汰</li>
+</ol>
+<h2 id="数组与链表的比较"><a href="#数组与链表的比较" class="headerlink" title="数组与链表的比较"></a>数组与链表的比较</h2><h3 id="底层存储结构方面"><a href="#底层存储结构方面" class="headerlink" title="底层存储结构方面"></a>底层存储结构方面</h3><p><strong>数组</strong>需要<strong>连续的内存空间</strong>，<strong>链表</strong>通过<strong>指针</strong>将<strong>零散的内存块</strong>串起来使用。</p>
+<p><img src="https://s1.ax1x.com/2020/07/22/UHtTgJ.jpg" alt="UHtTgJ.jpg" style="zoom:50%;" /></p>
+<h3 id="查找、插入与删除"><a href="#查找、插入与删除" class="headerlink" title="查找、插入与删除"></a>查找、插入与删除</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>查找</th>
+<th>插入</th>
+<th>删除</th>
+<th>内存</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数组</td>
+<td>$ O(1) $</td>
+<td>$ O(n) $</td>
+<td>$ O(n) $</td>
+<td>大小固定</td>
+</tr>
+<tr>
+<td>链表</td>
+<td>$ O(n) $</td>
+<td>$ O(1) $</td>
+<td>$ O(1) $</td>
+<td>动态扩容</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="链表的基本结构"><a href="#链表的基本结构" class="headerlink" title="链表的基本结构"></a>链表的基本结构</h2><h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><p>每块零散的<strong>内存块</strong>称为<strong>结点</strong>，每个<strong>结点</strong>由<strong>数据</strong>和<strong>后继指针</strong>组成；<strong>第一个</strong>结点叫做<strong>头结点</strong>，<strong>最后一个</strong>结点叫做<strong>尾结点</strong>；<strong>头结点</strong>记录链表的<strong>基地址</strong>，<strong>尾结点</strong>的指针指向<strong>空地址NULL</strong>。</p>
+<p><img src="https://s1.ax1x.com/2020/07/22/UHtLHx.jpg" alt="UHtLHx.jpg" style="zoom:50%;" /></p>
+<h4 id="链表的查找、插入与删除"><a href="#链表的查找、插入与删除" class="headerlink" title="链表的查找、插入与删除"></a>链表的查找、插入与删除</h4><p><strong>链表</strong>的<strong>随机访问</strong>由于是<strong>不连续空间</strong>所以<strong>时间复杂度</strong>为$ O(n) $,<strong>插入</strong>与<strong>删除</strong>的<strong>时间复杂度</strong>都是$ O(1) $,因为只需要<strong>修改</strong>指针指向的<strong>地址</strong>即可。</p>
+<h3 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h3><p><strong>循环链表</strong>是一种<strong>特殊</strong>的<strong>单链表</strong>，区别在于<strong>尾结点</strong>，其<strong>尾结点</strong>指向<strong>头结点</strong>，<strong>首尾</strong>相连形成了<strong>循环链表</strong>。</p>
+<p><img src="https://s1.ax1x.com/2020/07/22/UHU8OA.jpg" alt="UHU8OA.jpg" style="zoom:50%;" /></p>
+<h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><p><strong>单向链表</strong>只有<strong>一个</strong>方向，<strong>结点</strong>只有一个<strong>后继指针</strong>指向后面的<strong>结点</strong>；<strong>双向链表</strong>支持<strong>两个</strong>方向，每个<strong>结点</strong>具有一个<strong>后继指针</strong>以及一个<strong>前驱指针</strong>。</p>
+<p><img src="https://s1.ax1x.com/2020/07/22/UHawAx.jpg" alt="UHawAx.jpg" style="zoom:50%;" /></p>
+<h3 id="单向链表与双向链表的比较"><a href="#单向链表与双向链表的比较" class="headerlink" title="单向链表与双向链表的比较"></a>单向链表与双向链表的比较</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>存储空间</th>
+<th>删除结点中“值等于某个给定值”的结点</th>
+<th>删除(插入)给定指针指向它的结点</th>
+<th>有序链表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单向链表</td>
+<td>数据+后继指针</td>
+<td>查找 $O(n)$   删除$O(1)$</td>
+<td>查找$O(n)$  删除$ O(1) $</td>
+<td>查找$ O(n) $</td>
+</tr>
+<tr>
+<td>双向链表</td>
+<td>数据+前驱指针+后继指针</td>
+<td>查找 $O(n)$   删除$O(1)$</td>
+<td>查找$ O(1) $ 删除$ O(1) $</td>
+<td>查找$ O(logn) $</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="空间换时间"><a href="#空间换时间" class="headerlink" title="空间换时间"></a>空间换时间</h4><p>内存空间<strong>充足</strong>，追求代码的<strong>执行速度</strong>，可以选择<strong>空间复杂度</strong>较<strong>高</strong>，<strong>时间复杂度</strong>较<strong>低</strong>的算法或者数据结构；反之，内存<strong>紧缺</strong>，选择<strong>时间复杂度</strong>较<strong>高</strong>，<strong>空间复杂度</strong>较<strong>低</strong>的算法或者数据结构。</p>
+<p>对于<strong>执行较慢</strong>的程序，可以通过消耗<strong>更多</strong>的内存（空间换时间）来进行优化；而<strong>消耗过多</strong>内存的程序，可以通过消耗<strong>更多</strong>的时间（时间换空间）来降低内存的消耗。</p>
+<h4 id="时间换空间，空间换时间的例子"><a href="#时间换空间，空间换时间的例子" class="headerlink" title="时间换空间，空间换时间的例子"></a>时间换空间，空间换时间的例子</h4><p>以后补充</p>
+<h3 id="双向循环链表"><a href="#双向循环链表" class="headerlink" title="双向循环链表"></a>双向循环链表</h3><p><strong>双向循环链表</strong>指的是<strong>首结点</strong>的<strong>前驱指针</strong>指向<strong>尾结点</strong>的<strong>数据</strong>，<strong>尾结点</strong>的<strong>后继指针</strong>指向<strong>首结点</strong>的<strong>数据</strong>。</p>
+<p><img src="https://s1.ax1x.com/2020/07/22/UHBuxU.jpg" alt="UHBuxU.jpg" style="zoom:50%;" /></p>
+<h2 id="LRU缓存淘汰算法的实现"><a href="#LRU缓存淘汰算法的实现" class="headerlink" title="LRU缓存淘汰算法的实现"></a>LRU缓存淘汰算法的实现</h2><p>我们维护一个<strong>有序单链表</strong>，越靠近链表<strong>尾部</strong>的结点是越早之前访问的。当有一个新的数据被访问时，我们从链表头开始<strong>顺序遍历</strong>链表。</p>
+<ol>
+<li>如果此数据之前已经被缓存在链表中了，我们遍历得到这个数据对应的结点，并将其从<strong>原来</strong>的位置<strong>删除</strong>，然后再<strong>插入</strong>到链表的<strong>头部</strong>。</li>
+<li>如果此数据没有在缓存链表中，又可以分为两种情况：<ol>
+<li>如果此时缓存<strong>未满</strong>，则将此结点<strong>直接插入</strong>到链表的<strong>头部</strong>；</li>
+<li>如果此时缓存<strong>已满</strong>，则链表<strong>尾结点删除</strong>，将新的数据结点插入链表的<strong>头部</strong>。</li>
+</ol>
+</li>
+</ol>
+<h3 id="如何通过数组实现LRU缓存淘汰策略"><a href="#如何通过数组实现LRU缓存淘汰策略" class="headerlink" title="如何通过数组实现LRU缓存淘汰策略"></a>如何通过数组实现LRU缓存淘汰策略</h3><h4 id="参照链表方法"><a href="#参照链表方法" class="headerlink" title="参照链表方法"></a>参照链表方法</h4><p>我们维护一个<strong>有序的数组</strong>，越靠近数组<strong>尾部</strong>的是越早之前访问的。当有一个新的数据被访问时，我们从数组头开始<strong>遍历寻找</strong>数组。</p>
+<ol>
+<li>如果此数据之前已经被缓存在数组中了，我们遍历得到这个数据对应的下标，将这个下标的数据临时存放一个变量中，并将从其下标位置之前的数据统统向后一位，然后将临时存放在变量中的数据写入头部。</li>
+<li>如果此数据没有在缓存数组中，分为两种情况：<ol>
+<li>如果此时数组未满，则将所有数据向后移动一位，将数据直接插入到头部</li>
+<li>如果此时数组已满，则同样将所有数据向后移动一位，将数据插入到头部</li>
+</ol>
+</li>
+</ol>
+<h4 id="不参照链表"><a href="#不参照链表" class="headerlink" title="不参照链表"></a>不参照链表</h4><p>我们维护一个有序数组，越靠近数组头部的是越早之前访问的。当有一个新的数据被访问是，我们从数组头开始便利寻找数组。</p>
+<ol>
+<li>如果此数组之前已经被缓存在数组中了，我们遍历得到这个数据对应的下表，将这个下标的数据临时存放一个变量中，并将从其下标位置往后的数据统统向前一位，让后将临时存放在变量中的数据写入尾部</li>
+<li>如果此数据没有在缓存数组中，分为两种情况<ol>
+<li>如果此时数组未满，则将数据直接写入尾部</li>
+<li>如果次数数组已满，贼将所有数据向前移动一位，将数据插入尾部</li>
+</ol>
+</li>
+</ol>
+<h1 id="课后思考"><a href="#课后思考" class="headerlink" title="课后思考"></a>课后思考</h1><p>如何判断一个字符串是否是回文字符串的问题，我想你应该听过，我们今天的题目就是基于这个问题的改造版本。如果字符串是通过单链表来存储的，那该如何来判断是一个回文串呢？你有什么好的解决思路呢？相应的时间空间复杂度又是多少呢？</p>
+<p>现有的解决思路：</p>
+<ol>
+<li><p>遍历一遍现有的链表，获得链表的数量，这里分为两种情况</p>
+<ol>
+<li><p>单数的情况</p>
+<p>在此情况下记录中间结点，两两比对，由首结点和中间结点指向的结点开始进行比对即可，当首结点顺序指向到中间结点时比对结束</p>
+</li>
+<li><p>偶数的情况</p>
+<p>在此情况下取中间结点后一个结点，两两比对，由首结点和中间结点后一个结点指向的结点开始进行比对，当首结点顺序指向到中间结点时比对结束，此时将中间结点与中间结点的后一个结点再次比对即可。</p>
+</li>
+</ol>
+</li>
+</ol>
 
             </div>
             <hr/>
@@ -584,7 +663,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://pertal.club/archives/19f3ab51.html">https://pertal.club/archives/19f3ab51.html</a>
+                    <a href="https://pertal.club/archives/d12c0fb7.html">https://pertal.club/archives/d12c0fb7.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -622,12 +701,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Github/">
-                                    <span class="chip bg-color">Github</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/">
+                                    <span class="chip bg-color">数据结构与算法之美</span>
                                 </a>
                             
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
+                                <a href="/tags/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/">
+                                    <span class="chip bg-color">极客时间</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">学习</span>
                                 </a>
                             
                         </div>
@@ -929,54 +1012,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/archives/ab8e450c.html">
+                <a href="/archives/d12c0fb7.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="如何使用Git">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="算法学习记录-4">
                         
-                        <span class="card-title">如何使用Git</span>
+                        <span class="card-title">算法学习记录-4</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是一篇关于如何图形化(命令化暂时没补充)的教程，教你如何使用Git连接远程的Github仓库。
+                            算法相关的学习Day04,学习简单的链表
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
-                                    教程
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Github/">
-                        <span class="chip bg-color">Github</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/">
+                        <span class="chip bg-color">数据结构与算法之美</span>
                     </a>
                     
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
+                    <a href="/tags/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/">
+                        <span class="chip bg-color">极客时间</span>
                     </a>
                     
-                    <a href="/tags/SourceTree/">
-                        <span class="chip bg-color">SourceTree</span>
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">学习</span>
                     </a>
                     
                 </div>
@@ -990,31 +1075,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/archives/83a0a85.html">
+                <a href="/archives/94f519fc.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="生命不息,折腾不止.---记我自己的路">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="AlgorithmicLearningRecord-3">
                         
-                        <span class="card-title">生命不息,折腾不止.---记我自己的路</span>
+                        <span class="card-title">AlgorithmicLearningRecord-3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            以后的人生谁也无法决定，以后的自己谁也无法诉说，一切都要靠自己脚踏实地。
+                            算法学习记录Day03,进入基础篇的学习
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
-                                    随笔
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    算法与数据结构
                                 </a>
                             
                             
@@ -1024,8 +1109,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%B0%E5%BD%95%E6%84%9F%E6%82%9F/">
-                        <span class="chip bg-color">记录感悟</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/">
+                        <span class="chip bg-color">数据结构与算法之美</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/">
+                        <span class="chip bg-color">极客时间</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">学习</span>
                     </a>
                     
                 </div>
@@ -1200,6 +1293,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
