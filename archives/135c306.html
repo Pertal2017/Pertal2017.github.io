@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="最近生活的记录, null">
+    <meta name="keywords" content="如何实现一个简单的单向链表, null">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -20,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>最近生活的记录 | null</title>
+    <title>如何实现一个简单的单向链表 | null</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -314,7 +314,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '66127b522849f0392075b28e858526bb3c3f7b34e48c5833cf83d20c3a8a71d5';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('这篇文章需要密码哈，请输入密码')).toString(CryptoJS.enc.Hex)) {
                 alert('您输入的密码有误，请返回主页或者联系我索要相关文章的密码哦');
@@ -327,12 +327,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">最近生活的记录</h1>
+                    <h1 class="description center-align post-title">如何实现一个简单的单向链表</h1>
                 </div>
             </div>
         </div>
@@ -449,12 +449,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%8F%8D%E6%80%9D/">
-                                <span class="chip bg-color">反思</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%A7%81%E5%AF%86/">
-                                <span class="chip bg-color">私密</span>
+                            <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                                <span class="chip bg-color">链表</span>
                             </a>
                         
                     </div>
@@ -465,8 +461,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
-                                随笔
+                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                算法与数据结构
                             </a>
                         
                     </div>
@@ -478,14 +474,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-14
+                    2020-07-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-21
+                    2020-07-23
                 </div>
                 
 
@@ -514,546 +510,170 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这几天其实又开始有一些怠惰的现象了，学习不怎么上心，昨天吧甚至一度疯狂的操作买iPad,导致自己一整天都沉迷在看各种知乎的帖子无法自拔，买的很多课程也都怎么上心看了，现在依然有这个情况，所以我索性现在写一个相关的总结，总结一下最近的日常，顺便也熟悉一下<strong>Markdown</strong>的一些语法功能。</p>
-<h1 id="开销"><a href="#开销" class="headerlink" title="开销"></a>开销</h1><p>说到这个电子产品，这段时间我是深受其害，自从考完试成绩出来的那一刻，我就抑制不住自己了，开始疯狂的花钱，成绩肯定是很理想考了<strong>337</strong>分，但是就是这个分数让我这段时间有点飘，飘飘然的自己花了很多很多的钱，所以这里我想列个表格算一下自己总共花了多少钱。</p>
-<p><img src="https://s1.ax1x.com/2020/07/14/UUZf2V.png" alt="UUZf2V.png"></p>
-<h2 id="电子产品"><a href="#电子产品" class="headerlink" title="电子产品"></a>电子产品</h2><p>这里我准备分类，包括后面可能要花的钱我都准备一一列出，来说说我这段时间的实际花费，这种报复性的消费的确以后得注意，所以这里必须列清楚，列明白。</p>
-<h3 id="手机与其配件"><a href="#手机与其配件" class="headerlink" title="手机与其配件"></a>手机与其配件</h3><p>考完试没过半个月吧，我就换了一台手机又一次成为了“果粉”，实在是苹果的手机太香了，香的我有点上头，想买华为又苦于自己没有那么多钱，所以就入了苹果的iPhone SE 2020,同时买了个AirPods Pro,最近听说IOS 14 对 AirPods Pro要有新功能，所以也是很期待，但是这里还是得列清楚，列明白。</p>
-<h4 id="手机与耳机以及其售后服务"><a href="#手机与耳机以及其售后服务" class="headerlink" title="手机与耳机以及其售后服务"></a>手机与耳机以及其售后服务</h4><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">序列</th>
-<th style="text-align:center">产品名称</th>
-<th style="text-align:right">金额花费</th>
-<th style="text-align:right">购买地址</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:center">iPhone SE 2020 128GB + 换休无忧服务</td>
-<td style="text-align:right">3644.94</td>
-<td style="text-align:right">京东自营店</td>
-</tr>
-<tr>
-<td style="text-align:left">2</td>
-<td style="text-align:center">AirPods Pro主动降噪无线蓝牙耳机</td>
-<td style="text-align:right">1799</td>
-<td style="text-align:right">京东自营店</td>
-</tr>
-<tr>
-<td style="text-align:left">3</td>
-<td style="text-align:center">耳机5年全保修服务</td>
-<td style="text-align:right">189</td>
-<td style="text-align:right">京东自营店</td>
-</tr>
-<tr>
-<td style="text-align:left">4</td>
-<td style="text-align:center">耳机3年全保换新服务</td>
-<td style="text-align:right">169</td>
-<td style="text-align:right">京东自营店</td>
-</tr>
-<tr>
-<td style="text-align:left">5</td>
-<td style="text-align:center">苹果鉴定查询服务</td>
-<td style="text-align:right">6</td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td style="text-align:left">6</td>
-<td style="text-align:center">右耳机丢失 购买一只</td>
-<td style="text-align:right">578</td>
-<td style="text-align:right">鸿运展数码店</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:center">总计</td>
-<td style="text-align:right">6385.94</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>这里的花费就已经有<strong>5801.94</strong>元，将近<strong>6000</strong>元，之前好像没仔细算，但是这么算一下，这里花费真的很多了。</p>
-<h4 id="手机与耳机配件"><a href="#手机与耳机配件" class="headerlink" title="手机与耳机配件"></a>手机与耳机配件</h4><p>买了手机怎么可能收手，后面我还买了配件，当然很多配件的钱不是我自己付的，但是有一部分也是我自己付的，所以这里也要统计一下，况且好友代付貌似都没有记录，这个账也不好算呐，这里的金额总计是<strong>562.49</strong>元。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>序列</th>
-<th style="text-align:center">产品名称</th>
-<th style="text-align:right">金额花费</th>
-<th style="text-align:right">购买地址</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td style="text-align:center">紫米18W充电头</td>
-<td style="text-align:right">34.90</td>
-<td style="text-align:right">京东自营店</td>
-</tr>
-<tr>
-<td>2</td>
-<td style="text-align:center">华为无线充电27w原装</td>
-<td style="text-align:right">159-10(优惠)=149</td>
-<td style="text-align:right">京东自营店</td>
-</tr>
-<tr>
-<td>3</td>
-<td style="text-align:center">京东京造充电宝 30000毫安</td>
-<td style="text-align:right">94</td>
-<td style="text-align:right">京东自营店</td>
-</tr>
-<tr>
-<td>4</td>
-<td style="text-align:center">紫米充电套装</td>
-<td style="text-align:right">68.90</td>
-<td style="text-align:right">京东自营店</td>
-</tr>
-<tr>
-<td>5</td>
-<td style="text-align:center">开美智海绵耳塞</td>
-<td style="text-align:right">17</td>
-<td style="text-align:right">京东直营店</td>
-</tr>
-<tr>
-<td>6</td>
-<td style="text-align:center">耳机防尘贴</td>
-<td style="text-align:right">10.20</td>
-<td style="text-align:right">京东 帆睿数码店</td>
-</tr>
-<tr>
-<td>7</td>
-<td style="text-align:center">耳帽耳套</td>
-<td style="text-align:right">21.69</td>
-<td style="text-align:right">京东 与乐旗舰店</td>
-</tr>
-<tr>
-<td>8</td>
-<td style="text-align:center">紫米快充线</td>
-<td style="text-align:right">69</td>
-<td style="text-align:right">淘宝 zmi旗舰店</td>
-</tr>
-<tr>
-<td>9</td>
-<td style="text-align:center">亿色iPhoneSE钢化膜</td>
-<td style="text-align:right">35</td>
-<td style="text-align:right">淘宝 esr旗舰店</td>
-</tr>
-<tr>
-<td>10</td>
-<td style="text-align:center">AirPods Pro 保护套</td>
-<td style="text-align:right">26.8</td>
-<td style="text-align:right">imoblie迁千牵专卖店</td>
-</tr>
-<tr>
-<td>11</td>
-<td style="text-align:center">iPhone SE 2020 保护壳</td>
-<td style="text-align:right">36</td>
-<td style="text-align:right">广得利旗舰店</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center">总计</td>
-<td style="text-align:right">562.49</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="iPad与其配件"><a href="#iPad与其配件" class="headerlink" title="iPad与其配件"></a>iPad与其配件</h3><h4 id="iPad预估花费"><a href="#iPad预估花费" class="headerlink" title="iPad预估花费"></a>iPad预估花费</h4><p>因为录取通知书即将要到了，所以后面iPad也有相关的花费这里，就把花费也同时计算一下，毕竟也提前准备了配件，那么这里总计的金额就是<strong>9000</strong>元。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>序列</th>
-<th style="text-align:center">产品名称</th>
-<th style="text-align:right">金额花费</th>
-<th style="text-align:right">购买地址</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td style="text-align:center">12.9英寸 iPad Pro WLAN CL 1T</td>
-<td style="text-align:right">12299</td>
-<td style="text-align:right">无锡恒隆广场自营店</td>
-</tr>
-<tr>
-<td>2</td>
-<td style="text-align:center">AppleCare+ 服务计划(适用于iPad Pro)</td>
-<td style="text-align:right">799</td>
-<td style="text-align:right">无锡恒隆广场自营店</td>
-</tr>
-<tr>
-<td>3</td>
-<td style="text-align:center">AirPods Pro</td>
-<td style="text-align:right">1999</td>
-<td style="text-align:right">无锡恒隆广场自营店</td>
-</tr>
-<tr>
-<td>4</td>
-<td style="text-align:center">Apple Pencil(第二代)</td>
-<td style="text-align:right">895</td>
-<td style="text-align:right">无锡恒隆广场自营店</td>
-</tr>
-<tr>
-<td>5</td>
-<td style="text-align:center">优惠</td>
-<td style="text-align:right">-1246</td>
-<td style="text-align:right">暑假优惠</td>
-</tr>
-<tr>
-<td>6</td>
-<td style="text-align:center">第一次总计花费</td>
-<td style="text-align:right">14746</td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td>7</td>
-<td style="text-align:center">张高付款</td>
-<td style="text-align:right">-1346</td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td>8</td>
-<td style="text-align:center">第二次总计花费</td>
-<td style="text-align:right">13400</td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td>9</td>
-<td style="text-align:center">大爷付款</td>
-<td style="text-align:right">3000</td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td>10</td>
-<td style="text-align:center">第三次总计花费</td>
-<td style="text-align:right">10400</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h4 id="iPad配件"><a href="#iPad配件" class="headerlink" title="iPad配件"></a>iPad配件</h4><p>这里相关的配件也有很多，所以这里也计算下这个花费，总计<strong>432.97</strong>元。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>序列</th>
-<th style="text-align:center">产品名称</th>
-<th style="text-align:right">金额花费</th>
-<th style="text-align:right">购买地址</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td style="text-align:center">Anker USB-C 充电器 PD 30W</td>
-<td style="text-align:right">149</td>
-<td style="text-align:right">京东自营店</td>
-</tr>
-<tr>
-<td>2</td>
-<td style="text-align:center">iPad Pro 2020 保护套 防弯硬背板</td>
-<td style="text-align:right">108</td>
-<td style="text-align:right">锐益数码专营店</td>
-</tr>
-<tr>
-<td>3</td>
-<td style="text-align:center">亿色 2020全屏 iPad Pro 钢化膜</td>
-<td style="text-align:right">76.5</td>
-<td style="text-align:right">esr旗舰店</td>
-</tr>
-<tr>
-<td>4</td>
-<td style="text-align:center">亿色 2020 镜头膜</td>
-<td style="text-align:right">49.5</td>
-<td style="text-align:right">esr旗舰机</td>
-</tr>
-<tr>
-<td>5</td>
-<td style="text-align:center">二代笔 笔套</td>
-<td style="text-align:right">25</td>
-<td style="text-align:right">信诚e家</td>
-</tr>
-<tr>
-<td>6</td>
-<td style="text-align:center">笔尖套</td>
-<td style="text-align:right">8.95</td>
-<td style="text-align:right">海明视数码专营店</td>
-</tr>
-<tr>
-<td>7</td>
-<td style="text-align:center">苹果收纳盒</td>
-<td style="text-align:right">16.02</td>
-<td style="text-align:right">博音旗舰店</td>
-</tr>
-<tr>
-<td>8</td>
-<td style="text-align:center">苹果耳机收纳包</td>
-<td style="text-align:right">35.28</td>
-<td style="text-align:right">东莞数码包在线</td>
-</tr>
-<tr>
-<td>9</td>
-<td style="text-align:center">亿色 AirPods Pro 保护套</td>
-<td style="text-align:right">34.92</td>
-<td style="text-align:right">esr旗舰店</td>
-</tr>
-<tr>
-<td>10</td>
-<td style="text-align:center">AirPods Pro 保护耳套</td>
-<td style="text-align:right">39</td>
-<td style="text-align:right">ahastyle旗舰店</td>
-</tr>
-<tr>
-<td>11</td>
-<td style="text-align:center">OtterBox iPad 防摔保护套</td>
-<td style="text-align:right">707.99</td>
-<td style="text-align:right">OtterBox手机配件旗舰店</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center">总计</td>
-<td style="text-align:right">1250.16</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="其他花费"><a href="#其他花费" class="headerlink" title="其他花费"></a>其他花费</h3><p>其他花费就是一些杂七杂八的了，还有软件方面的花费了，这里总计高达了<strong>1290</strong>元，其中<strong>699</strong>元的<strong>研磨院自习室</strong>算是很大的浪费了！！！</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>序列</th>
-<th style="text-align:center">产品名称</th>
-<th style="text-align:right">金额花费</th>
-<th style="text-align:right">购买地址</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td style="text-align:center">瑞士军刀 大容量 旅行书包</td>
-<td style="text-align:right">146</td>
-<td style="text-align:right">svvisssvver箱包旗舰店</td>
-</tr>
-<tr>
-<td>2</td>
-<td style="text-align:center">密码软件</td>
-<td style="text-align:right">6</td>
-<td style="text-align:right">Apple</td>
-</tr>
-<tr>
-<td>3</td>
-<td style="text-align:center">Notability</td>
-<td style="text-align:right">60</td>
-<td style="text-align:right">Apple</td>
-</tr>
-<tr>
-<td>4</td>
-<td style="text-align:center">GoodNotes 5</td>
-<td style="text-align:right">50</td>
-<td style="text-align:right">Apple</td>
-</tr>
-<tr>
-<td>5</td>
-<td style="text-align:center">Alook浏览器</td>
-<td style="text-align:right">6</td>
-<td style="text-align:right">Apple</td>
-</tr>
-<tr>
-<td>6</td>
-<td style="text-align:center">我的小目标</td>
-<td style="text-align:right">68</td>
-<td style="text-align:right">Apple</td>
-</tr>
-<tr>
-<td>7</td>
-<td style="text-align:center">蒙哥英语原版阅读器</td>
-<td style="text-align:right">18</td>
-<td style="text-align:right">Apple</td>
-</tr>
-<tr>
-<td>8</td>
-<td style="text-align:center">IObit Uninstaller 9 Pro</td>
-<td style="text-align:right">69</td>
-<td style="text-align:right">APSGO</td>
-</tr>
-<tr>
-<td>9</td>
-<td style="text-align:center">IObit Smart Defrag 6 Pro</td>
-<td style="text-align:right">69</td>
-<td style="text-align:right">APSGO</td>
-</tr>
-<tr>
-<td>10</td>
-<td style="text-align:center">IObit Advanced SystemCare 13 Pro</td>
-<td style="text-align:right">99</td>
-<td style="text-align:right">APSGO</td>
-</tr>
-<tr>
-<td>11</td>
-<td style="text-align:center">Iris Pro 护眼软件</td>
-<td style="text-align:right">55.10</td>
-<td style="text-align:right">APSGO</td>
-</tr>
-<tr>
-<td>12</td>
-<td style="text-align:center">研磨院自习室</td>
-<td style="text-align:right">699</td>
-<td style="text-align:right">无锡清名桥研磨院</td>
-</tr>
-<tr>
-<td>13</td>
-<td style="text-align:center">三星 970Evo 512GB</td>
-<td style="text-align:right">800</td>
-<td style="text-align:right">五爱广场</td>
-</tr>
-<tr>
-<td>14</td>
-<td style="text-align:center">文本识别转换</td>
-<td style="text-align:right">18</td>
-<td style="text-align:right">Apple</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center">总计</td>
-<td style="text-align:right">2163.1</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="课程花费"><a href="#课程花费" class="headerlink" title="课程花费"></a>课程花费</h3><p>除了这些我还买了一些相关的学习课程 ，因此这里的课程也要计算一下价格，那么这里总共的花费就是<strong>2942.09</strong>元。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>序列</th>
-<th style="text-align:center">产品名称</th>
-<th style="text-align:right">金额花费</th>
-<th style="text-align:right">购买地址</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td style="text-align:center">SVip考研视频</td>
-<td style="text-align:right">60</td>
-<td style="text-align:right">尖端考研</td>
-</tr>
-<tr>
-<td>2</td>
-<td style="text-align:center">ABOBOO年费</td>
-<td style="text-align:right">299</td>
-<td style="text-align:right">ABOBOO</td>
-</tr>
-<tr>
-<td>3</td>
-<td style="text-align:center">MindMaster全平台终身订阅版</td>
-<td style="text-align:right">680</td>
-<td style="text-align:right">深圳亿图公司</td>
-</tr>
-<tr>
-<td>4</td>
-<td style="text-align:center">Java 全站通</td>
-<td style="text-align:right">453.30</td>
-<td style="text-align:right">How2J</td>
-</tr>
-<tr>
-<td>5</td>
-<td style="text-align:center">Java 练习题答案</td>
-<td style="text-align:right">27.84</td>
-<td style="text-align:right">How2J</td>
-</tr>
-<tr>
-<td>6</td>
-<td style="text-align:center">慕课网课程</td>
-<td style="text-align:right">963.05</td>
-<td style="text-align:right">慕课网</td>
-</tr>
-<tr>
-<td>7</td>
-<td style="text-align:center">数据结构与算法之美</td>
-<td style="text-align:right">29.9</td>
-<td style="text-align:right">极客时间</td>
-</tr>
-<tr>
-<td>8</td>
-<td style="text-align:center">编译原理之美</td>
-<td style="text-align:right">69</td>
-<td style="text-align:right">极客时间</td>
-</tr>
-<tr>
-<td>9</td>
-<td style="text-align:center">资源栈的所有内容</td>
-<td style="text-align:right">360</td>
-<td style="text-align:right">资源栈</td>
-</tr>
-<tr>
-<td>10</td>
-<td style="text-align:center">史汉生网课</td>
-<td style="text-align:right">43.75</td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center">总计</td>
-<td style="text-align:right">2985.84</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a>最后总结</h1><p>计算完里的花费我都不想写别的东西了，所以这里最后就计算一下自己的总共花费吧，果然没出我所料那这么算我可能这几个月的花费都要破<strong>25000</strong>元大关了！</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>序列</th>
-<th>产品总计大类</th>
-<th>总计金额</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>手机与耳机以及其售后服务</td>
-<td>6385.94</td>
-</tr>
-<tr>
-<td>2</td>
-<td>手机与耳机配件</td>
-<td>562.49</td>
-</tr>
-<tr>
-<td>3</td>
-<td>iPad预估花费</td>
-<td>10400</td>
-</tr>
-<tr>
-<td>4</td>
-<td>其他花费</td>
-<td>2163.1</td>
-</tr>
-<tr>
-<td>5</td>
-<td>课程花费</td>
-<td>2985.84</td>
-</tr>
-<tr>
-<td>6</td>
-<td>iPad配件</td>
-<td>1250.16</td>
-</tr>
-<tr>
-<td></td>
-<td>总计</td>
-<td>23747.53</td>
-</tr>
-</tbody>
-</table>
-</div>
+                <h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>这里主要是为了实现一个单向链表，那么首先我们得分析一个链表是如何形成的，以及其作用。</p>
+<p>链表的形成可以比喻成当年的火烧赤壁当中曹操利用铁索链接船只，也可以类比现代航行的船队，从图片上我们可以明显观察到一个拖船后面跟着很多的货船，这里拖船就是<strong>头节点</strong>，而最后一个船呢就可以称为<strong>尾结点</strong>。</p>
+<p><img src="https://s1.ax1x.com/2020/07/23/ULwY5R.jpg" alt="ULwY5R.jpg" style="zoom:50%;" /></p>
+<p>那么链表在计算机中的作用又是什么呢？</p>
+<p>这里的了解我并不多，主要的作用肯定是更加方便的插入与删除相关的节点元素，让存储更加便利化，而应用场景可能需要后续补充了。</p>
+<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>指针的定义就不叙述了，这里需要使用指针的目的主要是链接下一个节点地址，指向当前节点的地址。</p>
+<p>那么如何定义一个指针，以及指针该如何使用呢？</p>
+<pre class=" language-lang-c"><code class="language-lang-c">#include <stdio.h>
+
+int main(){
+    //这种是定义一个整型变量
+    int a = 10;
+    //这种就是定义一个整型变量的指针
+    int *p;
+    //需要注意的是 指针指向的是一个地址，而不是值
+
+    //在这里我们已经给a取了一个值10
+   //那么怎样才能让指针取到这个值？
+    p = &a;
+    // &这个符号用来取得a这个变量的地址，然后将其存入p中，这时候的p就指向了a的地址
+
+    //*的作用一共有三个分别是
+    /*
+        1. 乘号  
+        2. 申明指针
+        3. 取得指针中的数据
+    */
+    //这里使用*号就是为了取得指针中指向地址的数据
+    printf("%d", *p);
+
+
+    return 0;
+}
+</code></pre>
+<h2 id="动态存储函数-malloc"><a href="#动态存储函数-malloc" class="headerlink" title="动态存储函数$ malloc() $"></a>动态存储函数$ malloc() $</h2><p>在<strong>头文件</strong>$ <stdlib.h> $中我们可以使用一个函数$ malloc() $，这个函数的主要作用是<strong>分配字节</strong>，有了这个函数，假使我们要分配一个整型数据的字节那么我们可以直接使用  <code>malloc(4)</code> 来分配字节，可能你会觉得这个并没啥用处，但是如果<strong>你不知道某个类型的字节</strong>，那么加上$ sizeof() $函数，你就可以轻松的为你的指针分配相对应的字节，这样的情况下你可以直接使用 <code>*</code><strong>间接运算符</strong> 来直接进行赋值，这里简单举个例子。</p>
+<pre class=" language-lang-c"><code class="language-lang-c">#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    //定义一个整型的p指针
+    int *p;
+    //为指针动态申请一个int类型的空间
+    p = (int *)malloc(sizeof(int));
+    //向指针中所指向的内存空间中存入10
+    *p = 10;
+
+    //输出指针p所指向的内存中的值
+    printf("%d", *p);
+    return 0;
+}
+</code></pre>
+<p>$malloc()$的优势：</p>
+<p>这里我并不能理解，可能不太明白，因此摘抄《啊哈！算法》中对于这个的解释：</p>
+<p>为什么要用这么复杂的办法来存储数据呢？因为之前的方法，我们必须预先准确地知道所需变量的个数，也就是说我们必须定义出所有的变量。比如我们定义了100 个整型变量，那么程序就只能存储100 个整数，如果现在的实际情况是需要存储101个，那必须修改程序才可以。如果有一天你写的软件已经发布或者交付使用，却发现要存储1000 个数才行，那就不得不再次修改程序，重新编译程序，发布一个新版本来代替原来的。而有了$ malloc()$函数我们便可以在程序运行的过程中根据实际情况来申请空间。</p>
+<p><strong>注</strong>：$ malloc() $函数的返回值其实是 <code>void*</code>也就是说其可以强制转换成<strong>任何类型</strong>的指针，只要同指向的指针的<strong>类型</strong>对应即可。</p>
+<h2 id="链表节点的构造"><a href="#链表节点的构造" class="headerlink" title="链表节点的构造"></a>链表节点的构造</h2><p>链表节点主要有<strong>两个</strong>部分组成，其一是<strong>数据</strong>，其二是<strong>后继指针</strong>，当然这里我们只是考虑<strong>单向链表</strong>的情况，那么根据这两个要求我们实现的结构体如下:</p>
+<pre class=" language-lang-c"><code class="language-lang-c">struct node{
+    //用于存放整型数据
+    int data;
+    //后继指针用于指向与其相接的节点
+    //节点的类型也是 struct node 那么指针就是struct node *
+    struct node *next;
+}
+</code></pre>
+<h2 id="头结点与尾结点的处理"><a href="#头结点与尾结点的处理" class="headerlink" title="头结点与尾结点的处理"></a>头结点与尾结点的处理</h2><p><strong>头结点</strong>由于其自身的原因，所以要单独先建立一个<strong>头结点的指针</strong>用于指向构建的节点；而<strong>尾结点</strong>的处理其实只需要其为NULL就可以了，因此通过这个逻辑我们可以构建好一个链表。</p>
+<pre class=" language-lang-c"><code class="language-lang-c">//这里建立一个头结点的指针
+struct node* head;
+//起初并没有指向头结点的值
+head = NULL;
+
+//创建一个临时节点指针
+struct node *p;
+//动态申请一个空间，用来存放一个节点，并用临时指针指向这个空间
+p = (struct node*)malloc(sizeof(struct node));
+//创建一个当前节点指针
+struct node *q;
+
+//这里假设一个数据
+int a = 10;
+
+//-> 用于访问结构体内部成员 这里是将数据存储到节点的data域中
+p->data = a;
+
+//设置后继节点执行空，也就是当前节点的下一个节点为空
+p->next = NULL;
+
+//这里如果头结点是空那么头结点指向p，如果不是空那么当且节点的后继节点指向临时节点
+if(head == NULL)
+    head = p;
+else
+    q->next = p;
+//当前的节点变成现在的临时节点
+q=p;
+</code></pre>
+<h1 id="实现一个完整的单向链表"><a href="#实现一个完整的单向链表" class="headerlink" title="实现一个完整的单向链表"></a>实现一个完整的单向链表</h1><p>通过上面的操作，我们就可以明白如何创建一个完整的单向链表，那么下面就是单向链表的完整代码</p>
+<pre class=" language-lang-c"><code class="language-lang-c">#include <stdio.h>
+#include <stdlib.h>
+
+//创建节点的结构体
+struct node {
+    //数据域
+    int data;
+    //后继指针
+    struct node *next;
+}
+
+int main(){
+
+    //创建一个头节点
+    struct node *head;
+    //头结点先定义为NULL
+    head = NULL;
+
+    //创建一个临时节点指针
+    struct node *p;
+
+    //创建一个当前节点指针(这个指针赋值前是临时节点的前一个指针)
+    struct node *q;
+
+    //创建一个节点用来输出节点值
+    struct node *t;
+
+    //用来存放需要创建的节点个数
+    int n;
+    //用来临时存放数据域要储存的值
+    int a;
+
+
+    printf("请输入您需要创建的节点个数\n");
+    scanf("%d", n);
+
+    for(int i = 0 ; i < n ; i++){
+
+        //给临时节点指针分配一个节点字节的空间
+        p = (struct node*)malloc(struct node);
+        //输入要存储的值
+        scanf("%d", &a);
+        //将值存入临时节点的数据域中
+        p->data = a;
+        //临时节点的后继指针指向空 这个主要是为了尾结点考虑
+        p->next = NULL;
+
+        //如果头结点是空那么临时节点指向头结点
+        if(head == NULL)
+            head = p;
+           //否则当前节点的后继指针指向临时节点
+        else
+            q->next = p;
+        //当前节点更新为现在的临时节点
+        q = p;
+    }
+
+    //t节点指向现在的头节点
+    t = head;
+    while(t != NULL){
+        //输出当前的数据域中的值
+        printf("%d", t->data);
+        //将t重新指向当前节点的后继节点
+          t = t->next;
+    }
+
+    return 0;
+}
+</code></pre>
 
             </div>
             <hr/>
@@ -1079,7 +699,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://pertal.club/archives/8733180c.html">https://pertal.club/archives/8733180c.html</a>
+                    <a href="https://pertal.club/archives/135c306.html">https://pertal.club/archives/135c306.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1117,12 +737,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%8F%8D%E6%80%9D/">
-                                    <span class="chip bg-color">反思</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%A7%81%E5%AF%86/">
-                                    <span class="chip bg-color">私密</span>
+                                <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                                    <span class="chip bg-color">链表</span>
                                 </a>
                             
                         </div>
@@ -1428,31 +1044,32 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/archives/94f519fc.html">
+                <a href="/archives/11963935.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="算法学习记录-3">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="配置相关的小技巧问题集合">
                         
-                        <span class="card-title">算法学习记录-3</span>
+                        <span class="card-title">配置相关的小技巧问题集合</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            算法学习记录Day03,进入基础篇的学习
+                            1.GitBash控制台出现乱码以及cmd乱码解决方案
+
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-23
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
-                                    算法与数据结构
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                    教程
                                 </a>
                             
                             
@@ -1462,16 +1079,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/">
-                        <span class="chip bg-color">数据结构与算法之美</span>
+                    <a href="/tags/%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/">
+                        <span class="chip bg-color">配置问题</span>
                     </a>
                     
-                    <a href="/tags/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/">
-                        <span class="chip bg-color">极客时间</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">学习</span>
+                    <a href="/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/">
+                        <span class="chip bg-color">小技巧</span>
                     </a>
                     
                 </div>
@@ -1485,24 +1098,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/archives/384faa82.html">
+                <a href="/archives/d12c0fb7.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="算法学习记录-2">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="算法学习记录-4">
                         
-                        <span class="card-title">算法学习记录-2</span>
+                        <span class="card-title">算法学习记录-4</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            算法学习记录Day02,接着之前的时间复杂度问题
+                            算法相关的学习Day04,学习简单的链表
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-22
                             </span>
                         <span class="publish-author">
                             
@@ -1703,6 +1316,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
