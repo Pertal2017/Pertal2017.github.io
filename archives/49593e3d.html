@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="如何实现一个简单的单向链表, null">
+    <meta name="keywords" content="这个世界太大，脑袋装不下！, null">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -20,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>如何实现一个简单的单向链表 | null</title>
+    <title>这个世界太大，脑袋装不下！ | null</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -327,12 +327,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">如何实现一个简单的单向链表</h1>
+                    <h1 class="description center-align post-title">这个世界太大，脑袋装不下！</h1>
                 </div>
             </div>
         </div>
@@ -449,8 +449,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%93%BE%E8%A1%A8/">
-                                <span class="chip bg-color">链表</span>
+                            <a href="/tags/%E5%8F%8D%E6%80%9D/">
+                                <span class="chip bg-color">反思</span>
                             </a>
                         
                     </div>
@@ -461,8 +461,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
-                                算法与数据结构
+                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
+                                随笔
                             </a>
                         
                     </div>
@@ -474,28 +474,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-23
+                    2020-08-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-23
+                    2020-08-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    4 分
                 </div>
                 
 
@@ -510,170 +510,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>这里主要是为了实现一个单向链表，那么首先我们得分析一个链表是如何形成的，以及其作用。</p>
-<p>链表的形成可以比喻成当年的火烧赤壁当中曹操利用铁索链接船只，也可以类比现代航行的船队，从图片上我们可以明显观察到一个拖船后面跟着很多的货船，这里拖船就是<strong>头节点</strong>，而最后一个船呢就可以称为<strong>尾结点</strong>。</p>
-<p><img src="https://s1.ax1x.com/2020/07/23/ULwY5R.jpg" alt="ULwY5R.jpg" style="zoom:50%;" /></p>
-<p>那么链表在计算机中的作用又是什么呢？</p>
-<p>这里的了解我并不多，主要的作用肯定是更加方便的插入与删除相关的节点元素，让存储更加便利化，而应用场景可能需要后续补充了。</p>
-<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>指针的定义就不叙述了，这里需要使用指针的目的主要是链接下一个节点地址，指向当前节点的地址。</p>
-<p>那么如何定义一个指针，以及指针该如何使用呢？</p>
-<pre class=" language-lang-c"><code class="language-lang-c">#include <stdio.h>
-
-int main(){
-    //这种是定义一个整型变量
-    int a = 10;
-    //这种就是定义一个整型变量的指针
-    int *p;
-    //需要注意的是 指针指向的是一个地址，而不是值
-
-    //在这里我们已经给a取了一个值10
-   //那么怎样才能让指针取到这个值？
-    p = &a;
-    // &这个符号用来取得a这个变量的地址，然后将其存入p中，这时候的p就指向了a的地址
-
-    //*的作用一共有三个分别是
-    /*
-        1. 乘号  
-        2. 申明指针
-        3. 取得指针中的数据
-    */
-    //这里使用*号就是为了取得指针中指向地址的数据
-    printf("%d", *p);
-
-
-    return 0;
-}
-</code></pre>
-<h2 id="动态存储函数-malloc"><a href="#动态存储函数-malloc" class="headerlink" title="动态存储函数$ malloc() $"></a>动态存储函数$ malloc() $</h2><p>在<strong>头文件</strong>$ <stdlib.h> $中我们可以使用一个函数$ malloc() $，这个函数的主要作用是<strong>分配字节</strong>，有了这个函数，假使我们要分配一个整型数据的字节那么我们可以直接使用  <code>malloc(4)</code> 来分配字节，可能你会觉得这个并没啥用处，但是如果<strong>你不知道某个类型的字节</strong>，那么加上$ sizeof() $函数，你就可以轻松的为你的指针分配相对应的字节，这样的情况下你可以直接使用 <code>*</code><strong>间接运算符</strong> 来直接进行赋值，这里简单举个例子。</p>
-<pre class=" language-lang-c"><code class="language-lang-c">#include <stdio.h>
-#include <stdlib.h>
-
-int main(){
-    //定义一个整型的p指针
-    int *p;
-    //为指针动态申请一个int类型的空间
-    p = (int *)malloc(sizeof(int));
-    //向指针中所指向的内存空间中存入10
-    *p = 10;
-
-    //输出指针p所指向的内存中的值
-    printf("%d", *p);
-    return 0;
-}
-</code></pre>
-<p>$malloc()$的优势：</p>
-<p>这里我并不能理解，可能不太明白，因此摘抄《啊哈！算法》中对于这个的解释：</p>
-<p>为什么要用这么复杂的办法来存储数据呢？因为之前的方法，我们必须预先准确地知道所需变量的个数，也就是说我们必须定义出所有的变量。比如我们定义了100 个整型变量，那么程序就只能存储100 个整数，如果现在的实际情况是需要存储101个，那必须修改程序才可以。如果有一天你写的软件已经发布或者交付使用，却发现要存储1000 个数才行，那就不得不再次修改程序，重新编译程序，发布一个新版本来代替原来的。而有了$ malloc()$函数我们便可以在程序运行的过程中根据实际情况来申请空间。</p>
-<p><strong>注</strong>：$ malloc() $函数的返回值其实是 <code>void*</code>也就是说其可以强制转换成<strong>任何类型</strong>的指针，只要同指向的指针的<strong>类型</strong>对应即可。</p>
-<h2 id="链表节点的构造"><a href="#链表节点的构造" class="headerlink" title="链表节点的构造"></a>链表节点的构造</h2><p>链表节点主要有<strong>两个</strong>部分组成，其一是<strong>数据</strong>，其二是<strong>后继指针</strong>，当然这里我们只是考虑<strong>单向链表</strong>的情况，那么根据这两个要求我们实现的结构体如下:</p>
-<pre class=" language-lang-c"><code class="language-lang-c">struct node{
-    //用于存放整型数据
-    int data;
-    //后继指针用于指向与其相接的节点
-    //节点的类型也是 struct node 那么指针就是struct node *
-    struct node *next;
-}
-</code></pre>
-<h2 id="头结点与尾结点的处理"><a href="#头结点与尾结点的处理" class="headerlink" title="头结点与尾结点的处理"></a>头结点与尾结点的处理</h2><p><strong>头结点</strong>由于其自身的原因，所以要单独先建立一个<strong>头结点的指针</strong>用于指向构建的节点；而<strong>尾结点</strong>的处理其实只需要其为NULL就可以了，因此通过这个逻辑我们可以构建好一个链表。</p>
-<pre class=" language-lang-c"><code class="language-lang-c">//这里建立一个头结点的指针
-struct node* head;
-//起初并没有指向头结点的值
-head = NULL;
-
-//创建一个临时节点指针
-struct node *p;
-//动态申请一个空间，用来存放一个节点，并用临时指针指向这个空间
-p = (struct node*)malloc(sizeof(struct node));
-//创建一个当前节点指针
-struct node *q;
-
-//这里假设一个数据
-int a = 10;
-
-//-> 用于访问结构体内部成员 这里是将数据存储到节点的data域中
-p->data = a;
-
-//设置后继节点执行空，也就是当前节点的下一个节点为空
-p->next = NULL;
-
-//这里如果头结点是空那么头结点指向p，如果不是空那么当且节点的后继节点指向临时节点
-if(head == NULL)
-    head = p;
-else
-    q->next = p;
-//当前的节点变成现在的临时节点
-q=p;
-</code></pre>
-<h1 id="实现一个完整的单向链表"><a href="#实现一个完整的单向链表" class="headerlink" title="实现一个完整的单向链表"></a>实现一个完整的单向链表</h1><p>通过上面的操作，我们就可以明白如何创建一个完整的单向链表，那么下面就是单向链表的完整代码</p>
-<pre class=" language-lang-c"><code class="language-lang-c">#include <stdio.h>
-#include <stdlib.h>
-
-//创建节点的结构体
-struct node {
-    //数据域
-    int data;
-    //后继指针
-    struct node *next;
-}
-
-int main(){
-
-    //创建一个头节点
-    struct node *head;
-    //头结点先定义为NULL
-    head = NULL;
-
-    //创建一个临时节点指针
-    struct node *p;
-
-    //创建一个当前节点指针(这个指针赋值前是临时节点的前一个指针)
-    struct node *q;
-
-    //创建一个节点用来输出节点值
-    struct node *t;
-
-    //用来存放需要创建的节点个数
-    int n;
-    //用来临时存放数据域要储存的值
-    int a;
-
-
-    printf("请输入您需要创建的节点个数\n");
-    scanf("%d", n);
-
-    for(int i = 0 ; i < n ; i++){
-
-        //给临时节点指针分配一个节点字节的空间
-        p = (struct node*)malloc(struct node);
-        //输入要存储的值
-        scanf("%d", &a);
-        //将值存入临时节点的数据域中
-        p->data = a;
-        //临时节点的后继指针指向空 这个主要是为了尾结点考虑
-        p->next = NULL;
-
-        //如果头结点是空那么临时节点指向头结点
-        if(head == NULL)
-            head = p;
-           //否则当前节点的后继指针指向临时节点
-        else
-            q->next = p;
-        //当前节点更新为现在的临时节点
-        q = p;
-    }
-
-    //t节点指向现在的头节点
-    t = head;
-    while(t != NULL){
-        //输出当前的数据域中的值
-        printf("%d", t->data);
-        //将t重新指向当前节点的后继节点
-          t = t->next;
-    }
-
-    return 0;
-}
-</code></pre>
+                <h1 id="世界真的很大"><a href="#世界真的很大" class="headerlink" title="世界真的很大"></a>世界真的很大</h1><p>​    从历史追溯到现代，以中国的历史就有整整5000年之多，这个5000年人类从使用工具开始，不断学习，到今天的互联网世界，突然发现这个世界真的太大了，大的无妨想象，每天我们涉及的知识量可能是以前古人的几倍甚至几十倍，互联网上的新闻，视频，娱乐，综艺以及音乐，教程等等一系列的东西，可能在我写下这篇文章的一瞬间就会喷涌出一堆的内容，这些内容真的太多了，如果让我去看就仅仅我刚刚写下之前的那一段时间的内容，可能我花费几年的时间都没有办法浏览完，因此无形中我们会发现这个世界真的太大了，大的我无法想象，大的我感到惊慌失措，这片庞大的互联网大世界上那么多的资源就如同小世界一般，而我就如同渺小大陆中的一个小人在这个如此庞大的大陆上寻找，即使我好似拥有者瞬间移动到某个小时的能力，但是我想要欣赏这样的小世界或是评判这个小世界的好坏都需要我花费时间和经历，并且网络上还有类似于那种“小世界测评师”，他们评判了各种不同的小世界，最后将各种小世界又在这互联网大世界中写成了一个个微型小世界相关的内容，看到这些前辈们总结的微型小世界，让我们感到高兴的同时也让我们更加的迷失。</p>
+<h1 id="你欣赏的来吗？"><a href="#你欣赏的来吗？" class="headerlink" title="你欣赏的来吗？"></a>你欣赏的来吗？</h1><p>​    前辈们太过厉害，他们通过自己的摸索写下了一个个微型小世界，并且对每个小世界还进行的特别的说明，比如缺点在哪，优点在哪，这无疑给了我们这些后辈很多的方便，甚至有些前辈们利用自己的能力构建了更加精细的微型小世界体系，这些体系和那些简单构建的体系又有些不同，他们需要利用我们的资源来进行换取，毕竟很多是各种前辈的经验之谈，有些更是独门秘籍，因此前辈们索要一些资源也并没有什么问题，但是对于我们这些后辈其实却带来了很多很多的问题，比如每个领域就有各种不同的前辈对各种小世界的评价，通过前辈们缩略的小世界介绍，让我们在不欣赏全景的情况下，对各个小世界都有了简单的了解，但是这种情况下的欣赏只是简简单单，因此在这种情况下，我们开始了自己的征程，将前辈们所描写的微型小世界各种对比，比拼形成自己想要的小世界体系，但是毕竟是缩放过的微型小世界，当我们尝试使用那些小世界的时候，又开始各种折腾，各种麻烦，以至于到最后，自己想要达成的小世界没制作完成，倒是让自己迷失在了一个个前辈们构建的微型小世界中，无法自拔的沉沦下去，更有胜者相信只要我用资源兑换了前辈们的微型小世界，不需要欣赏就能完全掌握这个微型小世界，那么到头来终究是一场本末倒置的游戏罢了，你浪费了时间，前辈获得了资源，辛苦了前辈们的劳动，而你却迷失在各种前辈的微型小世界的门槛之中。</p>
+<h1 id="如何破除这种怪圈"><a href="#如何破除这种怪圈" class="headerlink" title="如何破除这种怪圈"></a>如何破除这种怪圈</h1><p>​    其实说到底，还是因为这个世界现在沟通太方便了，资源太多了，我如果想要学习一门技术，我可以找到各种我想要的资源，但是看到一半，我们会被其他的资源迷惑，之后陷入各种收集资源，各种学习半吊子的怪圈中，没有自己沉浸式的投入也不会出现强有力的回报，多线程是存在的，但是对于很多人多线程不适合使用，因为在这种情况下同领域下的多线程其实会增加我们自己的负担，一个领域内的内容如果不掌握完整就去进行这个领域的其他内容对于我们自己只会造成无形中的压力，并且会更加的迷茫，当你自己构建一个体系之后再去利用其他的资源进行更加细节化的提升，这才是最好的方式，而不是还没有完全搭建好一个体系的情况下，仅仅因为一点点的困难就去构建别的体系，然后让自己不断的迷茫，很多时候我们浪费的时间就是在收集资源之上而不是在学习之上，这种本末倒置的问题伴随了我很久很久，包括现在的我也有着这样的问题，如何破除，最好的办法就是一个领域中的东西，一个一个学，而不是多个同时学习给自己带来很多不必要的麻烦。</p>
 
             </div>
             <hr/>
@@ -699,7 +538,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://pertal.club/archives/135c306.html">https://pertal.club/archives/135c306.html</a>
+                    <a href="https://pertal.club/archives/49593e3d.html">https://pertal.club/archives/49593e3d.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -737,8 +576,8 @@ int main(){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%93%BE%E8%A1%A8/">
-                                    <span class="chip bg-color">链表</span>
+                                <a href="/tags/%E5%8F%8D%E6%80%9D/">
+                                    <span class="chip bg-color">反思</span>
                                 </a>
                             
                         </div>
@@ -1040,51 +879,48 @@ int main(){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/archives/11963935.html">
+                <a href="/archives/49593e3d.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="配置相关的小技巧问题集合">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="这个世界太大，脑袋装不下！">
                         
-                        <span class="card-title">配置相关的小技巧问题集合</span>
+                        <span class="card-title">这个世界太大，脑袋装不下！</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.GitBash控制台出现乱码以及cmd乱码解决方案
-
+                            世界真的很大​    从历史追溯到现代，以中国的历史就有整整5000年之多，这个5000年人类从使用工具开始，不断学习，到今天的互联网世界，突然发现这个世界真的太大了，大的无妨想象，每天我们涉及的知识量可能是以前古人的几倍甚至几十倍，互联网
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
-                                    教程
+                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
+                                    随笔
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/">
-                        <span class="chip bg-color">配置问题</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/">
-                        <span class="chip bg-color">小技巧</span>
+                    <a href="/tags/%E5%8F%8D%E6%80%9D/">
+                        <span class="chip bg-color">反思</span>
                     </a>
                     
                 </div>
@@ -1098,24 +934,24 @@ int main(){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/archives/d12c0fb7.html">
+                <a href="/archives/a62b3f21.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="算法学习记录-4">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="算法学习记录-5">
                         
-                        <span class="card-title">算法学习记录-4</span>
+                        <span class="card-title">算法学习记录-5</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            算法相关的学习Day04,学习简单的链表
+                            今天主要学习了《大话数据结构》中的线性表的一部分，每天进步一点点，相信暑假这一块我能懂得更多。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-24
                             </span>
                         <span class="publish-author">
                             
@@ -1132,16 +968,12 @@ int main(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/">
-                        <span class="chip bg-color">数据结构与算法之美</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/">
-                        <span class="chip bg-color">极客时间</span>
-                    </a>
-                    
                     <a href="/tags/%E5%AD%A6%E4%B9%A0/">
                         <span class="chip bg-color">学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/">
+                        <span class="chip bg-color">线性表</span>
                     </a>
                     
                 </div>
@@ -1316,13 +1148,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 

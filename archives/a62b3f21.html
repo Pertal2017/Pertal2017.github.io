@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="如何实现一个简单的单向链表, null">
+    <meta name="keywords" content="算法学习记录-5, null">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -20,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>如何实现一个简单的单向链表 | null</title>
+    <title>算法学习记录-5 | null</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -327,12 +327,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">如何实现一个简单的单向链表</h1>
+                    <h1 class="description center-align post-title">算法学习记录-5</h1>
                 </div>
             </div>
         </div>
@@ -449,8 +449,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%93%BE%E8%A1%A8/">
-                                <span class="chip bg-color">链表</span>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">学习</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/">
+                                <span class="chip bg-color">线性表</span>
                             </a>
                         
                     </div>
@@ -474,28 +478,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-23
+                    2020-07-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-23
+                    2020-08-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    4 分
                 </div>
                 
 
@@ -510,171 +514,57 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>这里主要是为了实现一个单向链表，那么首先我们得分析一个链表是如何形成的，以及其作用。</p>
-<p>链表的形成可以比喻成当年的火烧赤壁当中曹操利用铁索链接船只，也可以类比现代航行的船队，从图片上我们可以明显观察到一个拖船后面跟着很多的货船，这里拖船就是<strong>头节点</strong>，而最后一个船呢就可以称为<strong>尾结点</strong>。</p>
-<p><img src="https://s1.ax1x.com/2020/07/23/ULwY5R.jpg" alt="ULwY5R.jpg" style="zoom:50%;" /></p>
-<p>那么链表在计算机中的作用又是什么呢？</p>
-<p>这里的了解我并不多，主要的作用肯定是更加方便的插入与删除相关的节点元素，让存储更加便利化，而应用场景可能需要后续补充了。</p>
-<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>指针的定义就不叙述了，这里需要使用指针的目的主要是链接下一个节点地址，指向当前节点的地址。</p>
-<p>那么如何定义一个指针，以及指针该如何使用呢？</p>
-<pre class=" language-lang-c"><code class="language-lang-c">#include <stdio.h>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>通过昨天对链表的简单学习，由于对这一块的理解并不深刻，所以我就去看了《大话数据结构》中关于链表这一块的部分，但是前面的部分讲的是线性表，而这一章也是也是从线性表的讲解来转向链表的结构，所以这一部分就是对线性表的一部分的总结。</p>
+<h1 id="知识总结"><a href="#知识总结" class="headerlink" title="知识总结"></a>知识总结</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><strong>线性表</strong>是<strong>零个</strong>或<strong>多个</strong>数据元素的<strong>有限序列</strong>。</p>
+<h3 id="三个强调"><a href="#三个强调" class="headerlink" title="三个强调"></a>三个强调</h3><h4 id="1-序列"><a href="#1-序列" class="headerlink" title="1.序列"></a>1.序列</h4><p><strong>线性表</strong>是一个具有<strong>顺序</strong>的<strong>序列</strong>，它的<strong>第一个</strong>元素没有<strong>前驱指针</strong>，<strong>最后一个</strong>元素没有<strong>后继指针</strong>，其他的元素都<strong>只有</strong>一个<strong>前驱指针</strong>和<strong>后继指针</strong>。</p>
+<h4 id="2-有限"><a href="#2-有限" class="headerlink" title="2.有限"></a>2.有限</h4><p><strong>线性表</strong>的<strong>数量</strong>是<strong>有限</strong>的，其实它和数学中的<strong>数列</strong>有些类似，但是这里的<strong>数列</strong>是<strong>有限</strong>的而不是<strong>无限</strong>的。</p>
+<h4 id="3-数据类型相同"><a href="#3-数据类型相同" class="headerlink" title="3.数据类型相同"></a>3.数据类型相同</h4><p><strong>线性表</strong>存储的数据的<strong>类型</strong>都是<strong>相同</strong>的，一个<strong>线性表</strong>只有<strong>一个</strong>类型的<strong>数据</strong>。</p>
+<p><strong>注</strong>：复杂的<strong>线性表</strong>，一个<strong>数据元素</strong>可以由<strong>若干个</strong>数据项组成。</p>
+<h2 id="如何构造一个顺序存储结构的线性表"><a href="#如何构造一个顺序存储结构的线性表" class="headerlink" title="如何构造一个顺序存储结构的线性表"></a>如何构造一个顺序存储结构的线性表</h2><h3 id="什么是顺序存储结构的线性表"><a href="#什么是顺序存储结构的线性表" class="headerlink" title="什么是顺序存储结构的线性表"></a>什么是顺序存储结构的线性表</h3><p><strong>顺序存储结构</strong>的<strong>线性表</strong>是由一段<strong>地址连续的存储单元</strong>构成的，他们通过<strong>连续的存储单元</strong>来<strong>存储</strong>线性表中的<strong>数据元素</strong>，这种情况一般用<strong>一维数组</strong>来实现。</p>
+<h3 id="构造顺序存储结构线性表的三大条件"><a href="#构造顺序存储结构线性表的三大条件" class="headerlink" title="构造顺序存储结构线性表的三大条件"></a>构造顺序存储结构线性表的三大条件</h3><h4 id="1-存储空间的起始位置"><a href="#1-存储空间的起始位置" class="headerlink" title="1.存储空间的起始位置"></a>1.存储空间的起始位置</h4><p>​        构造这种线性表，首先要知道其存储空间的起始位置，如果不知道其起始位置，就无法构造一个完整的线性表，当然如果这里使用的        是数组，那么可以不需要。</p>
+<h4 id="2-线性表的最大存储容量"><a href="#2-线性表的最大存储容量" class="headerlink" title="2.线性表的最大存储容量"></a>2.线性表的最大存储容量</h4><p>​        这里主要针对的是利用顺序结构来构成的线性表，因为数组在使用前一般容量是固定的，所以这里就限制了线性表其自身的最大容        量，也就是说超过这个容量就无法再添加值了。</p>
+<h4 id="3-线性表的当前长度"><a href="#3-线性表的当前长度" class="headerlink" title="3.线性表的当前长度"></a>3.线性表的当前长度</h4><p>​        在制定了最大存储容量之后，我们如果要使用顺序存储结构的线性表，这时候的数组下标并不可靠，这里我们要自己定义一个相关的        变量来判定线性表的长度，只有通过这样才能够不出错。</p>
+<h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><p><strong>地址</strong>顾名思义就是<strong>存储器</strong>中每个<strong>存储单元</strong>的<strong>编号</strong>，这个<strong>编号</strong>我们称它为<strong>地址</strong>。</p>
+<h5 id="地址的计算方法"><a href="#地址的计算方法" class="headerlink" title="地址的计算方法"></a>地址的计算方法</h5><p>在实际的存储中我们如果想要知道一个对应元素的地址，我们要通过计算获得，这个计算公式为：</p>
+<script type="math/tex; mode=display">
+所求地址a_i=首地址a_1+(i-1)*存储单元大小</script><h3 id="线性表的构建"><a href="#线性表的构建" class="headerlink" title="线性表的构建"></a>线性表的构建</h3><p>上述已经将构建线性表的基本要求都提供了，这样我们也就明白该如何构建一个线性表，首先我们要设定<strong>存储空间的初始容量</strong> 也就是 <code>MAXSIZE</code>，其次我们要设定 <strong>元素类型</strong> ，之后创建一个关于此<strong>元素类型</strong>的<strong>数组</strong>，其次我们要建立一个 变量<code>length</code>来统计<strong>线性表</strong>的<strong>长度</strong>，所以通过这些条件我们可以得到如下的代码：</p>
+<pre class=" language-lang-c"><code class="language-lang-c">//构建一个线性表
+//设定存储空间初始容量
+#define MAXSIZE 20
+//设定元素类型
+typedef int ElemType;
 
-int main(){
-    //这种是定义一个整型变量
-    int a = 10;
-    //这种就是定义一个整型变量的指针
-    int *p;
-    //需要注意的是 指针指向的是一个地址，而不是值
+typedef struct{
+    //线性表中的数据域，最大值为MAXSIZE
+    ElemType data[MAXSIZE];
+    //线性表的长度
+    int length;
+}SqList;
+</code></pre>
+<h3 id="线性表的相关操作"><a href="#线性表的相关操作" class="headerlink" title="线性表的相关操作"></a>线性表的相关操作</h3><h4 id="初始化操作"><a href="#初始化操作" class="headerlink" title="初始化操作"></a>初始化操作</h4><p>初始化操作的主要目的是构建一个空的线性表，那么如何将线性表<strong>滞空</strong>呢？其实这里很简单，只需要将 <code>length</code>设置为$ 0$即可，根本不需要关心数组内是否有值。</p>
+<pre class=" language-lang-c"><code class="language-lang-c">//设置函数的返回类型
+typedef int Status;
+//定义一个操作完成时的提示
+#define OK 1
 
-    //在这里我们已经给a取了一个值10
-   //那么怎样才能让指针取到这个值？
-    p = &a;
-    // &这个符号用来取得a这个变量的地址，然后将其存入p中，这时候的p就指向了a的地址
-
-    //*的作用一共有三个分别是
-    /*
-        1. 乘号  
-        2. 申明指针
-        3. 取得指针中的数据
-    */
-    //这里使用*号就是为了取得指针中指向地址的数据
-    printf("%d", *p);
-
-
-    return 0;
+Status InitList(SqList *L){
+    L->length = 0;
+    return OK;
 }
 </code></pre>
-<h2 id="动态存储函数-malloc"><a href="#动态存储函数-malloc" class="headerlink" title="动态存储函数$ malloc() $"></a>动态存储函数$ malloc() $</h2><p>在<strong>头文件</strong>$ <stdlib.h> $中我们可以使用一个函数$ malloc() $，这个函数的主要作用是<strong>分配字节</strong>，有了这个函数，假使我们要分配一个整型数据的字节那么我们可以直接使用  <code>malloc(4)</code> 来分配字节，可能你会觉得这个并没啥用处，但是如果<strong>你不知道某个类型的字节</strong>，那么加上$ sizeof() $函数，你就可以轻松的为你的指针分配相对应的字节，这样的情况下你可以直接使用 <code>*</code><strong>间接运算符</strong> 来直接进行赋值，这里简单举个例子。</p>
-<pre class=" language-lang-c"><code class="language-lang-c">#include <stdio.h>
-#include <stdlib.h>
+<h4 id="清空线性表"><a href="#清空线性表" class="headerlink" title="清空线性表"></a>清空线性表</h4><p>通过<strong>初始化</strong>的操作，我们知道如何构建一个<strong>空的线性表</strong>，那么同理，清空线性表其实和其也基本类似，因为 <code>length</code>为0的情况下，我们不可能取到数组中的相关元素。</p>
+<pre class=" language-lang-c"><code class="language-lang-c">//设置函数的返回类型
+typedef int Status;
+//定义一个操作完成时的提示
+#define OK 1
 
-int main(){
-    //定义一个整型的p指针
-    int *p;
-    //为指针动态申请一个int类型的空间
-    p = (int *)malloc(sizeof(int));
-    //向指针中所指向的内存空间中存入10
-    *p = 10;
-
-    //输出指针p所指向的内存中的值
-    printf("%d", *p);
-    return 0;
-}
+//线性表清空 ClearList(*L)
+Status ClearList(SqList *L){
+    L->length = 0;
+    return OK;
+};
 </code></pre>
-<p>$malloc()$的优势：</p>
-<p>这里我并不能理解，可能不太明白，因此摘抄《啊哈！算法》中对于这个的解释：</p>
-<p>为什么要用这么复杂的办法来存储数据呢？因为之前的方法，我们必须预先准确地知道所需变量的个数，也就是说我们必须定义出所有的变量。比如我们定义了100 个整型变量，那么程序就只能存储100 个整数，如果现在的实际情况是需要存储101个，那必须修改程序才可以。如果有一天你写的软件已经发布或者交付使用，却发现要存储1000 个数才行，那就不得不再次修改程序，重新编译程序，发布一个新版本来代替原来的。而有了$ malloc()$函数我们便可以在程序运行的过程中根据实际情况来申请空间。</p>
-<p><strong>注</strong>：$ malloc() $函数的返回值其实是 <code>void*</code>也就是说其可以强制转换成<strong>任何类型</strong>的指针，只要同指向的指针的<strong>类型</strong>对应即可。</p>
-<h2 id="链表节点的构造"><a href="#链表节点的构造" class="headerlink" title="链表节点的构造"></a>链表节点的构造</h2><p>链表节点主要有<strong>两个</strong>部分组成，其一是<strong>数据</strong>，其二是<strong>后继指针</strong>，当然这里我们只是考虑<strong>单向链表</strong>的情况，那么根据这两个要求我们实现的结构体如下:</p>
-<pre class=" language-lang-c"><code class="language-lang-c">struct node{
-    //用于存放整型数据
-    int data;
-    //后继指针用于指向与其相接的节点
-    //节点的类型也是 struct node 那么指针就是struct node *
-    struct node *next;
-}
-</code></pre>
-<h2 id="头结点与尾结点的处理"><a href="#头结点与尾结点的处理" class="headerlink" title="头结点与尾结点的处理"></a>头结点与尾结点的处理</h2><p><strong>头结点</strong>由于其自身的原因，所以要单独先建立一个<strong>头结点的指针</strong>用于指向构建的节点；而<strong>尾结点</strong>的处理其实只需要其为NULL就可以了，因此通过这个逻辑我们可以构建好一个链表。</p>
-<pre class=" language-lang-c"><code class="language-lang-c">//这里建立一个头结点的指针
-struct node* head;
-//起初并没有指向头结点的值
-head = NULL;
-
-//创建一个临时节点指针
-struct node *p;
-//动态申请一个空间，用来存放一个节点，并用临时指针指向这个空间
-p = (struct node*)malloc(sizeof(struct node));
-//创建一个当前节点指针
-struct node *q;
-
-//这里假设一个数据
-int a = 10;
-
-//-> 用于访问结构体内部成员 这里是将数据存储到节点的data域中
-p->data = a;
-
-//设置后继节点执行空，也就是当前节点的下一个节点为空
-p->next = NULL;
-
-//这里如果头结点是空那么头结点指向p，如果不是空那么当且节点的后继节点指向临时节点
-if(head == NULL)
-    head = p;
-else
-    q->next = p;
-//当前的节点变成现在的临时节点
-q=p;
-</code></pre>
-<h1 id="实现一个完整的单向链表"><a href="#实现一个完整的单向链表" class="headerlink" title="实现一个完整的单向链表"></a>实现一个完整的单向链表</h1><p>通过上面的操作，我们就可以明白如何创建一个完整的单向链表，那么下面就是单向链表的完整代码</p>
-<pre class=" language-lang-c"><code class="language-lang-c">#include <stdio.h>
-#include <stdlib.h>
-
-//创建节点的结构体
-struct node {
-    //数据域
-    int data;
-    //后继指针
-    struct node *next;
-}
-
-int main(){
-
-    //创建一个头节点
-    struct node *head;
-    //头结点先定义为NULL
-    head = NULL;
-
-    //创建一个临时节点指针
-    struct node *p;
-
-    //创建一个当前节点指针(这个指针赋值前是临时节点的前一个指针)
-    struct node *q;
-
-    //创建一个节点用来输出节点值
-    struct node *t;
-
-    //用来存放需要创建的节点个数
-    int n;
-    //用来临时存放数据域要储存的值
-    int a;
-
-
-    printf("请输入您需要创建的节点个数\n");
-    scanf("%d", n);
-
-    for(int i = 0 ; i < n ; i++){
-
-        //给临时节点指针分配一个节点字节的空间
-        p = (struct node*)malloc(struct node);
-        //输入要存储的值
-        scanf("%d", &a);
-        //将值存入临时节点的数据域中
-        p->data = a;
-        //临时节点的后继指针指向空 这个主要是为了尾结点考虑
-        p->next = NULL;
-
-        //如果头结点是空那么临时节点指向头结点
-        if(head == NULL)
-            head = p;
-           //否则当前节点的后继指针指向临时节点
-        else
-            q->next = p;
-        //当前节点更新为现在的临时节点
-        q = p;
-    }
-
-    //t节点指向现在的头节点
-    t = head;
-    while(t != NULL){
-        //输出当前的数据域中的值
-        printf("%d", t->data);
-        //将t重新指向当前节点的后继节点
-          t = t->next;
-    }
-
-    return 0;
-}
-</code></pre>
-
+<h4 id="判断线性表是否为空"><a href="#判断线性表是否为空" class="headerlink" title="判断线性表是否为空"></a>判断线性表是否为空</h4><h4 id="查找某个位置的元素"><a href="#查找某个位置的元素" class="headerlink" title="查找某个位置的元素"></a>查找某个位置的元素</h4><h4 id="查找某个元素的位置"><a href="#查找某个元素的位置" class="headerlink" title="查找某个元素的位置"></a>查找某个元素的位置</h4><h4 id="在某个位置上插入一个新的元素"><a href="#在某个位置上插入一个新的元素" class="headerlink" title="在某个位置上插入一个新的元素"></a>在某个位置上插入一个新的元素</h4><h4 id="在某个位置上删除一个新的元素"><a href="#在某个位置上删除一个新的元素" class="headerlink" title="在某个位置上删除一个新的元素"></a>在某个位置上删除一个新的元素</h4><h4 id="获取线性表中元素的个数"><a href="#获取线性表中元素的个数" class="headerlink" title="获取线性表中元素的个数"></a>获取线性表中元素的个数</h4><h1 id="代码完整实现"><a href="#代码完整实现" class="headerlink" title="代码完整实现"></a>代码完整实现</h1>
             </div>
             <hr/>
 
@@ -699,7 +589,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://pertal.club/archives/135c306.html">https://pertal.club/archives/135c306.html</a>
+                    <a href="https://pertal.club/archives/a62b3f21.html">https://pertal.club/archives/a62b3f21.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -737,8 +627,12 @@ int main(){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%93%BE%E8%A1%A8/">
-                                    <span class="chip bg-color">链表</span>
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">学习</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/">
+                                    <span class="chip bg-color">线性表</span>
                                 </a>
                             
                         </div>
@@ -1044,6 +938,55 @@ int main(){
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/archives/49593e3d.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="这个世界太大，脑袋装不下！">
+                        
+                        <span class="card-title">这个世界太大，脑袋装不下！</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            世界真的很大​    从历史追溯到现代，以中国的历史就有整整5000年之多，这个5000年人类从使用工具开始，不断学习，到今天的互联网世界，突然发现这个世界真的太大了，大的无妨想象，每天我们涉及的知识量可能是以前古人的几倍甚至几十倍，互联网
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
+                                    随笔
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8F%8D%E6%80%9D/">
+                        <span class="chip bg-color">反思</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/archives/11963935.html">
                     <div class="card-image">
                         
@@ -1061,9 +1004,9 @@ int main(){
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1085,63 +1028,6 @@ int main(){
                     
                     <a href="/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/">
                         <span class="chip bg-color">小技巧</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/archives/d12c0fb7.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="算法学习记录-4">
-                        
-                        <span class="card-title">算法学习记录-4</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            算法相关的学习Day04,学习简单的链表
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-22
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
-                                    算法与数据结构
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/">
-                        <span class="chip bg-color">数据结构与算法之美</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/">
-                        <span class="chip bg-color">极客时间</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">学习</span>
                     </a>
                     
                 </div>
